@@ -1,0 +1,56 @@
+@import "../../Global/Colors.scss";
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    background-color: $FucsiaClarito;
+    text-decoration: none;
+    list-style: none;
+    user-select: none;
+    box-shadow: 1px 1px 5px .5px $Fucsia;
+
+    img {
+        width: 10%;
+        height: 120px;
+        object-fit: cover;
+    }
+    .navContainer {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        li {
+            list-style: none;
+            .list {
+                font-size: 25px;
+                font-weight: 600;
+                display: block;
+                color: $VerdeOscuro;
+                text-align: center;
+                padding: 14px 16px;
+            }
+        }
+    }
+    .navUser {
+        margin: auto;
+        font-size: 30px;
+        width: 10%;
+        padding: 5px;
+        border-radius: 1em;
+        color: $VerdeOscuro;
+        text-align: center;
+    }
+    .list,
+    .navUser {
+        text-decoration: none;
+        border-radius: 1em;
+        transition: 0.3s;
+        &:hover {
+            background-color: $VerdeOscuro-Hover;
+            transform: scale(1.05);
+        }
+    }
+}
