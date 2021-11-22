@@ -1,11 +1,12 @@
 import React from "react";
-import "./NavBar.scss";
-import imagen from "../../assets/img/Logo.jpeg";
+import "./navbar.scss";
+import imagen from "../../assets/img/logo.jpeg";
+import CartWidget from "./CartWidget.js";
 
 const NavBar = () => {
     return (
         <div className="navBar">
-            <img src={imagen} alt="Logo"></img>
+            <img src={imagen} alt="logo"></img>
             <a href="/index.html" className="navUser">Inicio</a>
             <ul className="navContainer">
                 <li><a href="#your_date" className="list">Agenda tu Cita</a></li>
@@ -14,6 +15,7 @@ const NavBar = () => {
                 <li><a href="#AboutUs" className="list">Studio Goldney</a></li>
             </ul>
             <a href="#Login" className="navUser">Login</a>
+            <CartWidget classCartWidget="CartWidget"/>
         </div>
     );
 };

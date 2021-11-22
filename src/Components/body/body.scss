@@ -1,0 +1,10 @@
+@import "../../global/Colors.scss";
+
+.itemListContainer{
+    margin: 30px 30px;
+    padding: 50px 50px;
+    border: 1px solid $Fucsia;
+    background-color: $FucsiaClarito;
+    box-shadow: 1px 1px 5px .5px $Fucsia;
+    text-align: center;
+}
