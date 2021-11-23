@@ -2,7 +2,7 @@ import "./body.scss";
 
 const ItemListContainer = ({greeting,classItemListContainer}) => {
     return (
-        <div className="itemListContainer">
+        <div className={classItemListContainer}>
             <h1>{greeting}</h1>
         </div>
     );
