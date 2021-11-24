@@ -1,10 +1,53 @@
 @import "../../global/Colors.scss";
 
-.itemListContainer{
+.itemListContainer {
+    color: $Shale;
     margin: 30px 30px;
     padding: 50px 50px;
-    border: 1px solid $Fucsia;
-    background-color: $FucsiaClarito;
-    box-shadow: 1px 1px 5px .5px $Fucsia;
+    background-color: $Grapes;
+    box-shadow: 1px 1px 5px 0.5px $EggPlant;
     text-align: center;
+}
+
+.itemCount {
+    background-color: #F7F7F7;
+    width: 20%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    p{
+        color: $Negro;
+        padding: 10px;
+        margin-left: 5px;
+    }
+    div {
+        border: 1px solid $Gris-Borde;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        i {
+            padding: 10px;
+        }
+        span{
+            color: $Negro;
+        }
+    }
+    button {
+        border: 2px solid $Azul-Contorno;
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+    }
+    div,button{
+        width: 90%;
+        margin: 10px auto;
+        background-color: $Blanco;
+        color: $Azul-Contorno;
+        border-radius: 7px;
+    }
+}
+
+.itemListContainer, .itemCount{
+    border-radius: 1em;
 }
