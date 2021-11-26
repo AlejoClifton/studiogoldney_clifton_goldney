@@ -40,9 +40,12 @@ const Item = () => {
                 img: "https://http2.mlstatic.com/D_NQ_NP_997649-MLA48160857755_112021-O.webp",
                 description: "Es un procesador",
                 stock: "Stock disponible: 5",
-            },
+            }
         ];
-        setTimeout(() => resolve(object), 2000);
+        setTimeout(() => {
+            resolve(object);
+            reject("No se pudieron leer los datos");
+        },2000);
     });
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import "./navbar.scss";
-import imagen from "../../assets/img/logo.jpeg";
+// import imagen from "../../assets/img/logo.jpeg";
 import CartWidget from "./CartWidget.js";
 
 const NavBar = () => {

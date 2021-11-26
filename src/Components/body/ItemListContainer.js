@@ -13,6 +13,8 @@ const ItemListContainer = ({ greeting, classItemListContainer }) => {
 
         list.then((response) => {
             setListProduct(response);
+        }).catch((error) => {
+            console.log(error);
         });
     }, []);
 
