@@ -6,7 +6,6 @@ import CartWidget from "./CartWidget.js";
 const NavBar = () => {
     return (
         <div className="navBar">
-            <img src={imagen} alt="logo"></img>
             <a href="/index.html" className="navUser">Inicio</a>
             <ul className="navContainer">
                 <li><a href="#your_date" className="list">Agenda tu Cita</a></li>

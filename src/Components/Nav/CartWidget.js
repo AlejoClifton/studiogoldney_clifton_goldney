@@ -1,6 +1,6 @@
 const CartWidget = ({classCartWidget}) => {
-        return <div class={classCartWidget}>
-            <i class="fas fa-shopping-cart"></i>
+        return <div className={classCartWidget}>
+            <i className="fas fa-shopping-cart"></i>
             <p>4</p>
         </div>;
 };
