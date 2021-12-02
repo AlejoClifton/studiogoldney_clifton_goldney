@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import './itemCount.scss';
 
-const ItemCount = ({ getStock, getInitial}) => {
+const ItemCount = ({ getStock, getInitial, getName}) => {
     const [stock] = useState(getStock);
     const [count, setCount] = useState(getInitial);
 
@@ -17,12 +18,11 @@ const ItemCount = ({ getStock, getInitial}) => {
     };
 
     const onAdd = () => {
-        window.alert(`¡Agregada la cantidad de ${count} productos a tu carrito!`);
+        window.alert(`¡Agregada la cantidad de ${count} de ${getName} a tu carrito!`);
     };
 
     return (
         <div className="itemCount">
-            <p>Camisa Tiger </p>
             <div>
                 <i className="fas fa-minus" onClick={handleRemove}></i>
                 <span>{count}</span>

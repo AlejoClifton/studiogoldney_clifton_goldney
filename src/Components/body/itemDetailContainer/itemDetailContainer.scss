@@ -1,0 +1,11 @@
+@import "../../../global/Colors.scss";
+
+.itemDetailContainer {
+    color: $Shale;
+    margin: 30px 30px;
+    padding: 50px 50px;
+    background-color: $Grapes;
+    box-shadow: 1px 1px 5px 0.5px $EggPlant;
+    text-align: center;
+    border-radius: 1em;
+}

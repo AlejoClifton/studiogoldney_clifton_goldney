@@ -1,0 +1,42 @@
+@import "../../../global/Colors.scss";
+
+.itemCount {
+    background-color: #f7f7f7;
+    width: 20%;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 1em;
+    p {
+        color: $Negro;
+        padding: 10px;
+        margin-left: 5px;
+    }
+    div {
+        border: 1px solid $Gris-Borde;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        i {
+            padding: 10px;
+        }
+        span {
+            color: $Negro;
+        }
+    }
+    button {
+        border: 2px solid $Azul-Contorno;
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+    }
+    div,
+    button {
+        width: 90%;
+        margin: 10px auto;
+        background-color: $Blanco;
+        color: $Azul-Contorno;
+        border-radius: 7px;
+    }
+}
