@@ -1,26 +1,28 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-import {getItem} from "../products/Products";
+import { getItemById } from "../products/Products";
 import ItemDetail from "./itemDetails/ItemDetail";
-import './itemDetailContainer.scss';
+import "./itemDetailContainer.scss";
 
 const ItemDetailContainer = () => {
     const [oneProduct, setOneProduct] = useState([]);
+    const { paramId } = useParams();
 
     useEffect(() => {
-        const listOneProduct = getItem();
+        const listOneProduct = getItemById(paramId);
 
-        listOneProduct.then((response) => {
-            setOneProduct(response);
-        }).catch((error) => {
-            console.log(error);
-        });
-
-    }, []);
+        listOneProduct
+            .then((response) => {
+                setOneProduct(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, [paramId]);
 
     return (
         <div className="itemDetailContainer">
-            {/* <ItemCount getStock={10} getInitial={1} /> */}
             <ItemDetail product={oneProduct} />
         </div>
     );

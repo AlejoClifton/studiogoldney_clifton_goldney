@@ -6,11 +6,18 @@ import "../../../../global/loader.scss";
 const ItemList = ({ products }) => {
     return (
         <div className="listProduct">
-        {products.length !== 0 ? (
-            products.map((item) => (
-                <Item key={item.id} product={item} />
-            ))
-            ):(<div className="lds-facebook"><div></div><div></div><div></div></div>)}
+            {products.length !== 0 ? (
+                products.map((item) => <Item key={item.id} product={item} />)
+            ) : (
+                <div>
+                    <h2>Cargando...</h2>
+                    <div className="lds-facebook">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

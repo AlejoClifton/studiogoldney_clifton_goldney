@@ -2,68 +2,53 @@
 
 .navBar {
     display: flex;
-    flex-direction: row;
-    background-color: $Grapes;
-    text-decoration: none;
-    list-style: none;
-    user-select: none;
-    box-shadow: 1px 1px 5px .5px $EggPlant;
-
+    align-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $AmarilloApagado;
+    .navUser {
+        font-size: 2em;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
     .navContainer {
-        width: 50%;
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: center;
+        width: 70%;
+        align-content: flex-end;
         justify-content: center;
-        align-items: center;
+        flex-direction: row;
         li {
             list-style: none;
             .list {
-                font-size: 25px;
-                font-weight: 600;
-                display: block;
-                color: $Shale;
-                text-align: center;
-                padding: 14px 16px;
+                transition: 0.1s;
+                font-size: 1em;
+                &:hover {
+                    font-size: 1.08em;
+                }
             }
         }
     }
-    .navUser {
-        margin: auto;
-        font-size: 30px;
-        width: 10%;
-        padding: 5px;
-        border-radius: 1em;
-        color: $Shale;
-        text-align: center;
+    .navUser,
+    .list {
+        padding: 20px;
+        text-decoration: none;
+        color: $NavBar;
     }
-    .CartWidget{
+    .CartWidget {
         width: 5%;
         display: flex;
         flex-direction: row;
         text-align: center;
         align-items: center;
-        i,p{
+        i,
+        p {
+            color: $NavBar;
             margin: auto;
             text-align: start;
             font-size: 30px;
-            width: calc(50%/2);
+            width: calc(50% / 2);
             padding: 5px;
-            color: $Shale;
-        }
-        p{
-            margin-top: 30px;
-        }
-    }
-    .list,
-    .navUser {
-        text-decoration: none;
-        border-radius: 1em;
-        transition: 0.3s;
-        &:hover {
-            background-color: $EggPlant;
-            transform: scale(1.05);
         }
     }
 }

@@ -1,44 +1,182 @@
 [
     {
         "id": "1",
+        "name": "Ryzen 5 5600x",
+        "price": "$44.999",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_806834-MLA44347094824_122020-O.webp",
+        "description": "Microprocesador Ryzen 5 5600X 4.6GHz, 6 Núcleos, 12 Hilos de trabajo.",
+        "stock": 1,
+        "categoryId": 1
+    },
+    {
+        "id": "2",
+        "name": "Ryzen 7 5800x",
+        "price": "$59.653",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_920739-MLA44347283255_122020-O.webp",
+        "description": "Microprocesador Ryzen 7 5800X 4.7GHz, 8 Núcleos, 16 Hilos de trabajo.",
+        "stock": 2,
+        "categoryId": 1
+    },
+    {
+        "id": "3",
+        "name": "Ryzen 7 3800xt",
+        "price": "$49.999",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_846590-MLA43418472875_092020-O.webp",
+        "description": "Microprocesador Ryzen 7 3800XT 4.7GHz, 8 Núcleos, 16 Hilos de trabajo.",
+        "stock": 3,
+        "categoryId": 1
+    },
+    {
+        "id": "4",
+        "name": "Ryzen 7 1700x",
+        "price": "$59.460",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_983725-MLA32398987317_102019-O.webp",
+        "description": "Microprocesador Ryzen 7 1700x 3.8GHz, 8 Núcleos, 16 Hilos de trabajo.",
+        "stock": 4,
+        "categoryId": 1
+    },
+    {
+        "id": "5",
+        "name": "Ryzen 7 5700g",
+        "price": "$50.238",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_974046-MLA46991831076_082021-O.webp",
+        "description": "Microprocesador Ryzen 7 5700g 3.8GHz, 8 Núcleos, 16 Hilos de trabajo.",
+        "stock": 5,
+        "categoryId": 1
+    },
+    {
+        "id": "6",
+        "name": "Motherboard A320m",
+        "price": "$6.499",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_751760-MLA31065397561_062019-O.webp",
+        "description": "Motherboard A320m-k con 2 slot de ram, 1 slot de gráfica, 1 slot de m.2.",
+        "stock": 1,
+        "categoryId": 2
+    },
+    {
+        "id": "7",
+        "name": "Motherboard A520m",
+        "price": "$6.500",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_889526-MLA47007799149_082021-O.webp",
+        "description": "Motherboard A520m K con 2 slot de ram, 1 slot de gráfica, 1 slot de m.2.",
+        "stock": 2,
+        "categoryId": 2
+    },
+    {
+        "id": "8",
+        "name": "Motherboard Z690-a",
+        "price": "$50.238",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_968324-MLA48207672135_112021-O.webp",
+        "description": "Motherboard Z690-a con 4 slot de ram, 2 slot de gráfica, 4 slot de m.2.",
+        "stock": 3,
+        "categoryId": 2
+    },
+    {
+        "id": "9",
+        "name": "Motherboard B560",
+        "price": "$31.850",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_831570-MLA46726337645_072021-O.webp",
+        "description": "Motherboard B560 con 4 slot de ram, 2 slot de gráfica, 3 slot de m.2.",
+        "stock": 4,
+        "categoryId": 2
+    },
+    {
+        "id": "10",
+        "name": "Motherboard h310m-h",
+        "price": "$9.401",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_904292-MLA42477853263_072020-O.webp",
+        "description": "Motherboard H310m-h con 2 slot de ram, 1 slot de gráfica, sin slot de m.2.",
+        "stock": 5,
+        "categoryId": 2
+    },
+    {
+        "id": "11",
+        "name": "Teclado G915",
+        "price": "$28.999",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_939703-MLA43754579245_102020-O.webp",
+        "description": "Teclado G915 con teclas rgb inalámbrico, tecla cilíndrica, cable removible.",
+        "stock": 1,
+        "categoryId": 3
+    },
+    {
+        "id": "12",
+        "name": "Mouse G903",
+        "price": "$10.197",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_974506-MLA32148386648_092019-O.webp",
+        "description": "Mouse G903 inalámbrico, con sensor óptico de movimiento, 12000 dpi.",
+        "stock": 2,
+        "categoryId": 3
+    },
+    {
+        "id": "13",
+        "name": "Parlante JBL Go 3",
+        "price": "$7.499",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_754237-MLA44715287415_012021-O.webp",
+        "description": "Parlante JBL Go 3 con potencia de 4.2w, batería recargable y cargador incluido.",
+        "stock": 3,
+        "categoryId": 3
+    },
+    {
+        "id": "14",
+        "name": "Mouse Pad HyperX",
+        "price": "$3.299",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_683814-MLA41164429541_032020-O.webp",
+        "description": "Mouse Pad HyperX Speed Edition Fury S Pro de caucho y tela xl 420mm x 900mm x 4mm negro/rojo.",
+        "stock": 4,
+        "categoryId": 3
+    },
+    {
+        "id": "15",
         "name": "Auriculares G733",
         "price": "$16.335",
         "img": "https://http2.mlstatic.com/D_NQ_NP_798552-MLA44771577101_022021-O.webp",
         "description": "¡Experimentá la adrenalina de sumergirte en la escena de otra manera! Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida. Con los Logitech G733 no te perdés ningún detalle y escuchás el audio tal y como fue diseñado por los creadores. El formato perfecto para vos El diseño over-ear brinda una comodidad insuperable gracias a sus suaves almohadillas. Al mismo tiempo, su sonido envolvente del más alto nivel se convierte en el protagonista de la escena.",
-        "stock": "Stock disponible: 10",
-        "valueStock": 10
+        "stock": 5,
+        "categoryId": 3
     },
     {
-        "id": "2",
-        "name": "Logitech G903",
-        "price": "$10.346",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_974506-MLA32148386648_092019-O.webp",
-        "description": "Es un mouse inalámbrico",
-        "stock": "Stock disponible: 2",
-        "valueStock": 2
+        "id": "16",
+        "name": "Fuente 850W LNZ",
+        "price": "$6.965",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_813074-MLA45977597988_052021-O.webp",
+        "description": "Fuente de Alimentación de 850w LNZ con regulación de voltaje de 220v, con luz led de colores.",
+        "stock": 1,
+        "categoryId": 4
     },
     {
-        "id": "3",
-        "name": "Teclado Logitech G915",
-        "price": "$23.254",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_939703-MLA43754579245_102020-O.webp",
-        "description": "Es un teclado inalámbrico",
-        "stock": "Stock disponible: 3"
+        "id": "17",
+        "name": "Fuente 450W Corsair",
+        "price": "$6.499",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_907485-MLA43361074375_092020-O.webp",
+        "description": "Fuente de Alimentación de 450w Corsair con sistema de cableado fijo, eficencia 80 plus Bronze.",
+        "stock": 2,
+        "categoryId": 4
     },
     {
-        "id": "4",
-        "name": "RTX 2060",
-        "price": "$155.000",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_989904-MLA43401240797_092020-O.webp",
-        "description": "Tarjeta de video",
-        "stock": "Stock disponible: 4"
+        "id": "18",
+        "name": "Fuente 550W Sentey",
+        "price": "$5.499",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_919613-MLA43361136423_092020-O.webp",
+        "description": "Fuente de Alimentación de 550w Sentey con certificación de eficiencia 80 Plus White, refrigeración por aire.",
+        "stock": 3,
+        "categoryId": 4
     },
     {
-        "id": "5",
-        "name": "Ryzen 7 1700x",
-        "price": "$42.270",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_997649-MLA48160857755_112021-O.webp",
-        "description": "Es un procesador",
-        "stock": "Stock disponible: 5"
+        "id": "19",
+        "name": "Fuente 650W Sentey",
+        "price": "$6.649",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_803534-MLA43357809533_092020-O.webp",
+        "description": "Fuente de Alimentación de 650w Sentey con certificación de eficiencia 80 Plus White, transforma la energía.",
+        "stock": 4,
+        "categoryId": 4
+    },
+    {
+        "id": "20",
+        "name": "Fuente 750W GigaByte",
+        "price": "$24.999",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_839855-MLA45653444301_042021-O.webp",
+        "description": "Fuente de Alimentación de Fuente 750W GigaByte con certificación de eficiencia 80 Plus Gold, refrigeración hidráulica, 100% Modular.",
+        "stock": 5,
+        "categoryId": 4
     }
 ]

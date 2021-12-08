@@ -1,28 +1,27 @@
 import "./itemListContainer.scss";
-// import ItemCount from "./itemsComponents/ItemCount";
-import { getProducts} from "../products/Products";
+import { getCategories } from "../products/Products";
 import ItemList from "./itemList/ItemList";
 
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting, classItemListContainer }) => {
     const [listProduct, setListProduct] = useState([]);
+    const {categoryId} = useParams();
 
     useEffect(() => {
-        const list = getProducts();
+        const list = getCategories(categoryId);
 
         list.then((response) => {
             setListProduct(response);
         }).catch((error) => {
             console.log(error);
         });
-
-    }, []);
+    }, [categoryId]);
 
     return (
         <div className={classItemListContainer}>
             <h1>{greeting}</h1>
-            {/* <ItemCount getStock={10} getInitial={1} /> */}
             <ItemList products={listProduct} />
         </div>
     );
