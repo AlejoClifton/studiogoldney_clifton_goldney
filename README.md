@@ -49,7 +49,7 @@ El navbar redirecciona a las diferentes categorías de productos.
 
 ### ItemListContainer
 
-El ItemListContainer, contiene una lista de todos los productos que se encuentran en producto.js
+El ItemListContainer, contiene una lista de todos los productos que se encuentran en producto.js, también recibe un ID mediante el `useParams` de React Router.
 
 #### `useEffect`
 
@@ -58,7 +58,8 @@ El useEffect llama al método `getCategories` del producto.js lo cual suceden 2 
 * Si le mandamos un ID referencial, traerá todos los productos que se encuentren en esa categoría.
 * Si no le mandamos un ID, por defecto es vacío, al ser vacío traerá todos los productos sin importar la categoría.
 
-En ambos casos el resultado de la promesa se la mandamos al `ItemList` para que lo renderice.
+En caso de haber recibido el ID, se lo mandamos al `ItemList` además del resultado de la promesa para que lo renderice.
+En caso que no, de igual forma mandamos el resultado de la promesa le mandamos al `ItemList` para que lo renderice.
 
 #### `ItemList`
 
