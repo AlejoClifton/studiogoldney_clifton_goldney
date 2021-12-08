@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { getItemById } from "../products/Products";
+import { getItemById } from "../products/products";
 import ItemDetail from "./itemDetails/ItemDetail";
 import "./itemDetailContainer.scss";
 

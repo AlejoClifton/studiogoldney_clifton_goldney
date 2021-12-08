@@ -12,7 +12,7 @@ export const getItemById = (id) => {
     });
 };
 
-export const getCategories = (id = "") => {
+export const getCategory = (id = "") => {
     if (id !== "") {
         return new Promise((resolve, reject) => {
             const product = products.filter(
@@ -32,20 +32,3 @@ export const getCategories = (id = "") => {
         });
     }
 };
-
-// export const getCategories = (id = "") => {
-//     if (id !== "") {
-//         return new Promise((resolve, reject) => {
-//             const product = products.filter(
-//                 (prod) => parseInt(prod.categoryId) === parseInt(id)
-//             );
-//             resolve(product);
-//             reject("No se pueden cargar los productos");
-//         });
-//     } else {
-//         return new Promise((resolve, reject) => {
-//             resolve(products);
-//             reject("No se pueden cargar los productos");
-//         });
-//     }
-// };

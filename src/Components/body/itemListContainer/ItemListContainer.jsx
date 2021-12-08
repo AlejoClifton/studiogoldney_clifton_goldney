@@ -1,5 +1,5 @@
 import "./itemListContainer.scss";
-import { getCategories } from "../products/Products";
+import { getCategory } from "../products/products";
 import ItemList from "./itemList/ItemList";
 
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ const ItemListContainer = ({ greeting, classItemListContainer }) => {
     const {categoryId} = useParams();
 
     useEffect(() => {
-        const list = getCategories(categoryId);
+        const list = getCategory(categoryId);
 
         list.then((response) => {
             setListProduct(response);

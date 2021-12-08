@@ -47,6 +47,18 @@ Y por otro lado está el `ItemDetailContainer` que tiene un parametro `/item/:pa
 
 El navbar redirecciona a las diferentes categorías de productos.
 
+#### `useEffect`
+
+El useEffect llama al método `getCategories` del category.js para traer todas las categorías de productos, estas se las mandamos a `NavBarList`.
+
+#### `NavBarList`
+
+NavBarList es una función que recibe un array de categorías de productos y las manda a como map al componente `NavBarCategory` además de mostrar el carrito y el botón `Studio Goldney` como botón "home" para volver al inicio `/`.
+
+#### `NavBarCategory`
+
+Este componente recibe cada objeto recibido por el map y lo transforma en un link con una redirección de categoría y su nombre.
+
 ### ItemListContainer
 
 El ItemListContainer, contiene una lista de todos los productos que se encuentran en producto.js, también recibe un ID mediante el `useParams` de React Router.
@@ -103,7 +115,7 @@ Esta función se encarga de mostrar una alerta, que dice "Agregada la cantidad d
 
 `Ejemplo` Agregada la cantidad de 5 de Producto 1.
 
-### Productos
+### Products
 
 Los productos por el momento, son atraídos de un array de objetos, que son llamados por los diferentes métodos:
 
@@ -111,9 +123,17 @@ Los productos por el momento, son atraídos de un array de objetos, que son llam
 
 Este método se encarga de recibir un parámetroID de ese mismo producto. Luego lo devuelve como promesa con un delay, para simular el llamado a una base de datos.
 
-#### `getCategories`
+#### `getCategory`
 
 Este método se encarga de recibir un parámetro ID de la categoría del producto. Luego lo devuelve como promesa con un delay, para simular el llamado a una base de datos.
+
+### Category
+
+Las categorías como los productos, son por el momento, traídas de un array de objetos, que son llamados por el siguiente método:
+
+#### `getCategories`
+
+Este es el método que trae todas las categorías de los productos. Luego lo devuelve como promesa sin delay ya que es el navbar.
 
 ## Autor
 
