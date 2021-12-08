@@ -61,6 +61,8 @@ El useEffect llama al método `getCategories` del producto.js lo cual suceden 2 
 En caso de haber recibido el ID, se lo mandamos al `ItemList` además del resultado de la promesa para que lo renderice.
 En caso que no, de igual forma mandamos el resultado de la promesa le mandamos al `ItemList` para que lo renderice.
 
+También hice a propósito que en la categoría gabinetes no haya ningún producto, por lo tanto, si el ID es igual a gabinetes, no se renderizará nada y aparecerá un mensaje de cargando infinito.
+
 #### `ItemList`
 
 Recibe los productos del `ItemListContainer` los coloca en un map y dentro coloca al `Item` para que lo renderice además de asignarle una key para diferenciar cada uno de ellos sumado a un prop de producto con el item.
