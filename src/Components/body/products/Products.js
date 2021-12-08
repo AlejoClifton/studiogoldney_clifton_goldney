@@ -1,14 +1,5 @@
 import products from "./products.json";
 
-export const getItem = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(products[0]);
-            reject("No se pueden cargar los productos");
-        }, 2000);
-    });
-};
-
 export const getItemById = (id) => {
     return new Promise((resolve, reject) => {
         const product = products.find(
@@ -17,7 +8,7 @@ export const getItemById = (id) => {
         setTimeout(() => {
             resolve(product);
             reject("No se pueden cargar los productos");
-        }, 1000);
+        }, 2000);
     });
 };
 
@@ -37,7 +28,7 @@ export const getCategories = (id = "") => {
                 setTimeout(() => {
                     resolve(products);
                     reject("No se pueden cargar los productos");
-                }, 2000);
+                }, 1000);
         });
     }
 };

@@ -14,10 +14,17 @@ const ItemDetail = ({ product }) => {
                         <img src={product.img} alt="Imagen" />
                         <div className="datesProducts">
                             <p className="Description">
-                                <span className="span">Descripcion:</span> {product.description}
+                                <span className="span">Descripcion:</span>{" "}
+                                {product.description}
                             </p>
-                            <p className="Price"><span className="span">Precio:</span> {product.price}</p>
-                            <p className="Stock"><span className="span">Stock Disponible:</span> {product.stock}</p>
+                            <p className="Price">
+                                <span className="span">Precio:</span>{" "}
+                                {product.price}
+                            </p>
+                            <p className="Stock">
+                                <span className="span">Stock Disponible:</span>{" "}
+                                {product.stock}
+                            </p>
                             <ItemCount
                                 getName={product.name}
                                 getStock={product.stock}
@@ -27,7 +34,14 @@ const ItemDetail = ({ product }) => {
                     </div>
                 </div>
             ) : (
-                <div>Cargando...</div>
+                <div>
+                    <h2>Cargando...</h2>
+                    <div className="lds-facebook">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
             )}
         </div>
     );

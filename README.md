@@ -2,6 +2,7 @@
 
 Este es un proyecto realizado de forma completa con React JS en el curso de Coderhouse.
 
+
 ## Instalación, Ejecución
 
 Para poder ejecutar el programa deberás...
@@ -18,7 +19,8 @@ Con npm start, podrás iniciar la aplicación, por lo general, se te abrirá só
 
 Con control + C, podrás finalizar la ejecución del programa.
 
-## Qué lenguajes de programación utilicé para realizar esto?
+
+## ¿Qué lenguajes de programación utilicé para realizar esto?
 
 Los lenguajes de programación que utilicé fueron:
 
@@ -27,6 +29,22 @@ Los lenguajes de programación que utilicé fueron:
 * JavaScript
 * React JS
 * Node JS (Para la ejecución del servidor)
+
+
+## ¿Cómo funciona el proyecto?
+
+### Productos
+
+Los productos por el momento, son atraídos de un array de objetos, que son llamados por los diferentes métodos.
+
+#### `getItemById`
+
+Este método se encarga de recibir un parámetro por el ID de ese mismo producto. Luego lo devuelve como promesa con un delay, para simular el llamado a una base de datos.
+
+#### `getCategories`
+
+Este método se encarga de recibir un parámetro por el ID de la categoría del producto. Luego lo devuelve como promesa con un delay, para simular el llamado a una base de datos.
+
 
 ## Autor
 
