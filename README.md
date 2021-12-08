@@ -39,13 +39,13 @@ El app.js tiene todos los routers del proyecto, el `ItemListContainer` tiene 2 p
 uno es el `/` y el otro es el `/category/:categoryId`.
 Y por otro lado está el `ItemDetailContainer` que tiene un parametro `/item/:paramId`.
 
-* / -> ItemListContainer es el router principal.
-* /category/:categoryId -> ItemListContainer es el router de categorias.
-* /item/:paramId -> ItemDetailContainer es el router de detalle de producto.
+* / -> ItemListContainer -> es el router principal.
+* /category/:categoryId -> ItemListContainer -> es el router de categorias de productos específicos.
+* /item/:paramId -> ItemDetailContainer -> es el router de detalle de producto.
 
 ### Navbar
 
-El navbar redirecciona a las diferentes categorías con su ID correspondiente.
+El navbar redirecciona a las diferentes categorías de productos.
 
 ### ItemListContainer
 
@@ -114,4 +114,4 @@ Este método se encarga de recibir un parámetro ID de la categoría del product
 
 ## Autor
 
-Alejo Tomás Clifton Goldney, Técnico Universitario en Programación.
+Alejo Tomás Clifton Goldney, Técnico Universitario en Programación, 21 años.
