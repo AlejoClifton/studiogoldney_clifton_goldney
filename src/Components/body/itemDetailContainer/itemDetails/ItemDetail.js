@@ -1,4 +1,4 @@
-import ItemCount from "../../itemCount/ItemCount";
+import ItemCount from "./itemCount/ItemCount";
 
 import "../../../../global/loader.scss";
 import "./itemDetails.scss";
@@ -28,8 +28,7 @@ const ItemDetail = ({ product }) => {
                             <ItemCount
                                 getName={product.name}
                                 getStock={product.stock}
-                                getInitial={1}
-                            />
+                                getInitial={0} />
                         </div>
                     </div>
                 </div>

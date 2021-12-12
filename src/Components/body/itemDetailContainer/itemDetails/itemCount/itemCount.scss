@@ -1,4 +1,4 @@
-@import "../../../global/Colors.scss";
+@import "../../../../../global/Colors.scss";
 
 .itemCount {
     width: 40%;
@@ -29,9 +29,12 @@
         margin-top: 10px;
         width: 100%;
         padding: 10px;
+        a{
+            text-decoration: none;
+        }
     }
     div,
-    button {
+    button,a {
         width: 90%;
         margin: 10px auto;
         background-color: $Blanco;
