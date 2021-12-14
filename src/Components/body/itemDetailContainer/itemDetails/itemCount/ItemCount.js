@@ -22,7 +22,7 @@ const ItemCount = ({ getStock, getInitial, getName }) => {
 
     const onAdd = () => {
         if (count > 0) {
-            window.alert(`¡Agregada la cantidad de ${stock} de ${getName} a tu carrito!`);
+            window.alert(`¡Agregada la cantidad de ${count} de ${getName} a tu carrito!`);
             setPurchase(true);
         }
         else {
