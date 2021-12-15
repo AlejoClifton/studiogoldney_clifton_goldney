@@ -1,0 +1,26 @@
+@import '../../../../global/colors.scss';
+
+.CartWidget {
+    width: 5%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: $Piel;
+    padding: 0.5em;
+    margin: auto;
+    border-radius: 0.5em;
+    &:hover {
+        background-color: $PielOscurito;
+    }
+    i,
+    p {
+        color: $NavBar;
+        margin: auto;
+        text-align: start;
+        font-size: 30px;
+        width: calc(50% / 2);
+        padding: 5px;
+    }
+}

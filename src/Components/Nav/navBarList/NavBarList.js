@@ -11,7 +11,7 @@ const NavBarList = ({ categories }) => {
             <ul className="navContainer">
                 {categories.map(category => <NavBarCategory key={category.id} category={category} />)}
             </ul>
-            <CartWidget classCartWidget="CartWidget" />
+            <CartWidget/>
         </div>
     )
 }

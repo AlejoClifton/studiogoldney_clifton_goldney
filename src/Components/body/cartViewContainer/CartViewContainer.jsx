@@ -1,13 +1,14 @@
-import React from 'react'
-
+import React, {useContext} from 'react'
+import CartContext from '../../../context/CartContext'
+import ItemsCartList from './ItemCartList/ItemsCartList';
 import "./cartViewContainer.scss";
 
 const CartViewContainer = () => {
+    const {itemCart} = useContext(CartContext);
+    console.log(itemCart);
     return (
-        <div className="CartViewContainer">
-            <h1>Hola soy un Carrito por el momento vacío :D</h1>
-        </div>
-    )
+        <ItemsCartList items={itemCart}/>
+    );
 }
 
 export default CartViewContainer;

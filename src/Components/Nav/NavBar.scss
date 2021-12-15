@@ -1,6 +1,10 @@
 @import "../../global/Colors.scss";
 
 .navBar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
     display: flex;
     align-content: flex-end;
     justify-content: space-between;
@@ -34,21 +38,5 @@
         padding: 20px;
         text-decoration: none;
         color: $NavBar;
-    }
-    .CartWidget {
-        width: 5%;
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        align-items: center;
-        i,
-        p {
-            color: $NavBar;
-            margin: auto;
-            text-align: start;
-            font-size: 30px;
-            width: calc(50% / 2);
-            padding: 5px;
-        }
     }
 }

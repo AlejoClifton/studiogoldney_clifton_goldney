@@ -28,6 +28,7 @@ const ItemDetail = ({ product }) => {
                             <ItemCount
                                 getName={product.name}
                                 getStock={product.stock}
+                                getProduct = {product}
                                 getInitial={0} />
                         </div>
                     </div>
