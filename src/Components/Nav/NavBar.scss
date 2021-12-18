@@ -40,3 +40,28 @@
         color: $NavBar;
     }
 }
+
+.CartWidget {
+    width: 5%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: $Fondo;
+    padding: 0.5em;
+    margin: auto;
+    border-radius: 0.5em;
+    &:hover {
+        background-color: $FondoOscurito;
+    }
+    i,
+    p {
+        color: $NavBar;
+        margin: auto;
+        text-align: start;
+        font-size: 30px;
+        width: calc(50% / 2);
+        padding: 5px;
+    }
+}

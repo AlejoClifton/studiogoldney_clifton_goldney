@@ -1,48 +1,20 @@
-import ItemCount from "./itemCount/ItemCount";
-
-import "../../../../global/loader.scss";
-import "./itemDetails.scss";
-
 const ItemDetail = ({ product }) => {
     return (
-        <div>
-            {product.length !== 0 ? (
-                <div className="oneProduct">
-                    <h1>Producto Seleccionado</h1>
-                    <h2> {product.name} </h2>
-                    <div className="Dates">
-                        <img src={product.img} alt="Imagen" />
-                        <div className="datesProducts">
-                            <p className="Description">
-                                <span className="span">Descripcion:</span>{" "}
-                                {product.description}
-                            </p>
-                            <p className="Price">
-                                <span className="span">Precio:</span>{" "}
-                                {product.price}
-                            </p>
-                            <p className="Stock">
-                                <span className="span">Stock Disponible:</span>{" "}
-                                {product.stock}
-                            </p>
-                            <ItemCount
-                                getName={product.name}
-                                getStock={product.stock}
-                                getProduct = {product}
-                                getInitial={0} />
-                        </div>
-                    </div>
-                </div>
-            ) : (
+        <div className="ItemContainer">
+            <img src={product.img} alt="Imagen" />
+            <div className="detailsContainer">
                 <div>
-                    <h2>Cargando...</h2>
-                    <div className="lds-facebook">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
+                    <p>
+                        <span className="span">Descripcion:</span> {product.description}
+                    </p>
+                    <p>
+                        <span className="span">Precio:</span> ${product.price}
+                    </p>
+                    <p>
+                        <span className="span">Stock Disponible:</span> {product.stock}
+                    </p>
                 </div>
-            )}
+            </div>
         </div>
     );
 };

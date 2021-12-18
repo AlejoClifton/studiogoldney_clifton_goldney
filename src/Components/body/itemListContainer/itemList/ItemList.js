@@ -1,23 +1,12 @@
-import React from "react";
-import Item from "./Item";
-import "./itemList.scss";
-import "../../../../global/loader.scss";
+import React from 'react';
+import Item from './Item';
 
 const ItemList = ({ products }) => {
     return (
         <div className="listProduct">
-            {products.length !== 0 ? (
-                products.map((item) => <Item key={item.id} product={item} />)
-            ) : (
-                <div>
-                    <h2>Cargando...</h2>
-                    <div className="lds-facebook">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            )}
+            {products.map((item) => {
+                return <Item key={item.id} product={item} />;
+            })}
         </div>
     );
 };

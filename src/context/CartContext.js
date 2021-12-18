@@ -5,14 +5,21 @@ const Context = React.createContext();
 export const CartContext = ({ children }) => {
     const [itemCart, setItemCart] = useState([]);
     const [quantity, setQuantity] = useState(0);
+    const [total, setTotal] = useState(0);
 
     const addItemCart = (item) => {
         setItemCart([...itemCart, item]);
+        setTotal(total + (item.oneProduct.price * item.count));
     };
 
     const removeItemCart = (itemId, itemQuantity) => {
-        setItemCart(itemCart.filter((item) => item.getProduct.id !== itemId));
+        let eliminado = (itemCart.filter((item) => item.oneProduct.id === itemId));
+        let sum = eliminado[0].oneProduct.price * eliminado[0].count;
+
+        setItemCart(itemCart.filter((item) => item.oneProduct.id !== itemId));
         setQuantity(quantity - itemQuantity);
+
+        setTotal(total - sum);
     };
 
     const clearItems = () => {
@@ -21,7 +28,7 @@ export const CartContext = ({ children }) => {
     };
 
     const isInCart = (itemId) => {
-        return itemCart.find((item) => item.getProduct.id === itemId);
+        return itemCart.find((item) => item.oneProduct.id === itemId);
     };
 
     const addQuantity = (itemQuantity) => {
@@ -29,13 +36,13 @@ export const CartContext = ({ children }) => {
     };
 
     const addQuantityById = (itemId, itemQuantity) => {
-        const item = itemCart.find((item) => item.getProduct.id === itemId);
+        const item = itemCart.find((item) => item.oneProduct.id === itemId);
         item.count = item.count + itemQuantity;
         addQuantity(itemQuantity);
     };
 
     const itemById = (id) => {
-        return itemCart.find((item) => item.getProduct.id === id);
+        return itemCart.find((item) => item.oneProduct.id === id);
     };
 
     return (
@@ -44,6 +51,7 @@ export const CartContext = ({ children }) => {
                 values: {
                     itemCart,
                     quantity,
+                    total,
                 },
                 itemCart,
                 addItemCart,

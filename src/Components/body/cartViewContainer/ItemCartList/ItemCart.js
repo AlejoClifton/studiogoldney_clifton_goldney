@@ -14,8 +14,8 @@ const ItemCart = ({ item, count }) => {
                 <img src={item.img} alt="Imagen" />
                 <h1> {item.name} </h1>
                 <p className="Count">{count}</p>
-                <p className="Price">{item.price}</p>
-                <i onClick={removeItem} class="far fa-times-circle"></i>
+                <p className="Price">${item.price * count}</p>
+                <i onClick={removeItem} className="far fa-times-circle"></i>
             </div>
         </div>
     );

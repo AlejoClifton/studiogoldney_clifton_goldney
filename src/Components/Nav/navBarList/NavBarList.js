@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 
-import NavBarCategory from "./NavBarCategory";
+import NavBarCategory from "./cartWidget/NavBarCategory";
 import CartWidget from "./cartWidget/CartWidget";
 
 const NavBarList = ({ categories }) => {

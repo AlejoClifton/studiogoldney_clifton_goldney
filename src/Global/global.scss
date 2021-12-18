@@ -1,0 +1,53 @@
+@import './colors.scss';
+
+.title {
+    font-size: 2em;
+    color: $Titulo;
+}
+
+.buttonLink {
+    border: 2px solid $Texto;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+    background-color: $Blanco;
+    border-radius: 1em;
+    &:hover {
+        background-color: $Texto;
+        color: $Blanco;
+    }
+}
+
+.buttonCart {
+    margin-top: 150px;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid $Texto;
+    text-align: center;
+    color: $Texto;
+    border-radius: 1em;
+    background-color: $Blanco;
+    font-size: 25px;
+    font-weight: 600;
+    &:hover {
+        background-color: $Texto;
+        color: $Blanco;
+    }
+}
+
+.buttonCartEnd{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid $Texto;
+    text-align: center;
+    color: $Texto;
+    border-radius: 1em;
+    background-color: $Blanco;
+    font-size: 25px;
+    font-weight: 600;
+    &:hover {
+        background-color: $Texto;
+        color: $Blanco;
+    }
+}

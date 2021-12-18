@@ -1,5 +1,5 @@
 import { CartContext } from './context/CartContext';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import NavBar from './components/nav/NavBar';
 import ItemListContainer from './components/body/itemListContainer/ItemListContainer';
@@ -12,20 +12,28 @@ function App() {
             <CartContext>
                 <BrowserRouter>
                     <NavBar />
-                    <Switch>
-                        <Route exact path="/">
-                            <ItemListContainer greeting={'Productos'} classItemListContainer="itemListContainer" />
-                        </Route>
-                        <Route path="/category/:categoryId">
-                            <ItemListContainer greeting={'Productos'} classItemListContainer="itemListContainer" />
-                        </Route>
-                        <Route path="/item/:paramId">
-                            <ItemDetailContainer />
-                        </Route>
-                        <Route path="/cart">
-                            <CartViewContainer />
-                        </Route>
-                    </Switch>
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <ItemListContainer
+                                    greeting={'Productos'}
+                                    classItemListContainer="itemListContainer"
+                                />
+                            }
+                        ></Route>
+                        <Route
+                            path="/category/:categoryId"
+                            element={
+                                <ItemListContainer
+                                    greeting={'Productos'}
+                                    classItemListContainer="itemListContainer"
+                                />
+                            }
+                        ></Route>
+                        <Route path="/item/:paramId" element={<ItemDetailContainer />}></Route>
+                        <Route path="/cart" element={<CartViewContainer />}></Route>
+                    </Routes>
                 </BrowserRouter>
             </CartContext>
         </div>
