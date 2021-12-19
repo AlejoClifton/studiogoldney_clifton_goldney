@@ -24,6 +24,10 @@ const ItemListContainer = ({ greeting, classItemListContainer }) => {
         }).catch((error) => {
             console.log(error);
         });
+
+        return () => {
+            setListProduct();
+        };
     }, [categoryId]);
 
     return (

@@ -8,9 +8,11 @@ import './cartViewContainer.scss';
 const CartViewContainer = () => {
     const { itemCart } = useContext(CartContext);
     const { clearItems, values } = useContext(CartContext);
+
     const checkout = () => {
         alert(`¡Finalizaste tu compra! ¡compraste ${values.quantity} productos a $${values.total}!`);
     }
+    
     return (
         <div className="container">
             {itemCart.length !== 0 ? (
