@@ -11,14 +11,16 @@ import './itemDetailContainer.scss';
 const ItemDetailContainer = () => {
     const [oneProduct, setOneProduct] = useState([]);
     const { paramId } = useParams();
-    const { addItemCart, isInCart, addQuantity, addQuantityById, itemById } = useContext(CartContext);
+    const { addItemCart, addQuantity, addQuantityById, itemById } = useContext(CartContext);
 
     const [purchase, setPurchase] = useState(false);
     const [object, setObjetc] = useState(false);
 
     const onAdd = (count) => {
         if (count > 0) {
-            if (!isInCart(oneProduct.id)) {
+            const productoRecibido = itemById(oneProduct.id);
+
+            if (!productoRecibido) {
                 addItemCart({
                     oneProduct,
                     count,
@@ -27,8 +29,6 @@ const ItemDetailContainer = () => {
                 addQuantity(count);
                 setPurchase(true);
             } else {
-                const productoRecibido = itemById(oneProduct.id);
-
                 if (productoRecibido.count + count <= oneProduct.stock) {
                     window.alert(`¡Agregada la cantidad de ${count} de ${oneProduct.name} a tu carrito!`);
                     addQuantityById(oneProduct.id, count);

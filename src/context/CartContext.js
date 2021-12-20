@@ -9,11 +9,11 @@ export const CartContext = ({ children }) => {
 
     const addItemCart = (item) => {
         setItemCart([...itemCart, item]);
-        setTotal(total + (item.oneProduct.price * item.count));
+        setTotal(total + item.oneProduct.price * item.count);
     };
 
     const removeItemCart = (itemId, itemQuantity) => {
-        let eliminado = (itemCart.filter((item) => item.oneProduct.id === itemId));
+        let eliminado = itemCart.filter((item) => item.oneProduct.id === itemId);
         let sum = eliminado[0].oneProduct.price * eliminado[0].count;
 
         setItemCart(itemCart.filter((item) => item.oneProduct.id !== itemId));
@@ -25,10 +25,6 @@ export const CartContext = ({ children }) => {
     const clearItems = () => {
         setItemCart([]);
         setQuantity(0);
-    };
-
-    const isInCart = (itemId) => {
-        return itemCart.find((item) => item.oneProduct.id === itemId);
     };
 
     const addQuantity = (itemQuantity) => {
@@ -57,7 +53,6 @@ export const CartContext = ({ children }) => {
                 addItemCart,
                 removeItemCart,
                 clearItems,
-                isInCart,
                 addQuantity,
                 addQuantityById,
                 itemById,
