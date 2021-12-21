@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getItemById } from '../products/products';
+import { getProductById } from '../../../service/firebase/productService';
 
 import ItemDetail from './itemDetails/ItemDetail';
 import ItemCount from './itemCount/ItemCount';
@@ -43,11 +43,9 @@ const ItemDetailContainer = () => {
     };
 
     useEffect(() => {
-        const listOneProduct = getItemById(paramId);
-
-        listOneProduct
-            .then((response) => {
-                setOneProduct(response);
+        getProductById('items', paramId)
+            .then((res) => {
+                setOneProduct(res);
                 setObjetc(true);
             })
             .catch((error) => {

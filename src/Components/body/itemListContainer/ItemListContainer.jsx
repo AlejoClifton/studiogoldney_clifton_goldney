@@ -1,5 +1,5 @@
-import { getCategory } from '../products/products';
 import ItemList from './itemList/ItemList';
+import { getProducts } from '../../../service/firebase/productService';
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -12,22 +12,18 @@ const ItemListContainer = ({ greeting, classItemListContainer }) => {
     const [list, setList] = useState(false);
 
     useEffect(() => {
-        const list = getCategory(categoryId);
-
-        list.then((response) => {
-            setListProduct(response);
-            if (response.length === 0) {
-                setList(false);
-            } else {
-                setList(true);
-            }
-        }).catch((error) => {
-            console.log(error);
-        });
-
-        return () => {
-            setListProduct();
-        };
+        getProducts('items', categoryId)
+            .then((res) => {
+                setListProduct(res);
+                if (res.length === 0) {
+                    setList(false);
+                } else {
+                    setList(true);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }, [categoryId]);
 
     return (

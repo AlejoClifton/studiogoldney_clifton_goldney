@@ -1,25 +1,30 @@
-import "./navbar.scss";
-import { getCategories } from "../body/category/category.js";
-import NavBarList from "./navBarList/NavBarList";
+import './navbar.scss';
+import NavBarList from './navBarList/NavBarList';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+
+import { collection, getDocs} from 'firebase/firestore';
+import { db } from '../../service/firebase/firebase';
 
 const NavBar = () => {
     const [category, setCategory] = useState([]);
 
     useEffect(() => {
-        const list = getCategories();
-
-        list.then((response) => {
-            setCategory(response);
-        }).catch((error) => {
-            console.log(error);
-        });
+        getDocs(collection(db, 'category'))
+            .then((QuerySnapshot) => {
+                const products = QuerySnapshot.docs.map((doc) => {
+                    return { id: doc.id, ...doc.data() };
+                });
+                setCategory(products);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }, []);
 
     return (
         <div>
-            <NavBarList categories={category}/>
+            <NavBarList categories={category} />
         </div>
     );
 };
