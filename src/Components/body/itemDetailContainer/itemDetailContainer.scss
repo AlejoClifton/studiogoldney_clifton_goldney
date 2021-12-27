@@ -8,51 +8,53 @@
     text-align: center;
     border-radius: 1em;
 }
-
-.ItemContainer {
+.containerDetail {
+    background-color: $Blanco;
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
     img {
-        background-color: $Blanco;
-        width: 300px;
-        height: 300px;
+        width: 400px;
+        height: 400px;
         margin: auto;
         object-fit: contain;
         border-radius: 1em;
+        margin-right: 50px;
     }
-    .detailsContainer {
-        width: 100%;
-        padding: 30px;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-content: center;
-        display: flex;
-        background-color: $Fondo;
-
-        font-size: 20px;
-        color: $Negro;
-        text-align: left;
-        .span {
-            font-size: 25px;
-            font-weight: 600;
-            color: $Texto;
+    color: $Negro;
+    text-align: left;
+    .span {
+        font-size: 25px;
+        font-weight: 600;
+        color: $Texto;
+    }
+    .spanBlock{
+        font-size: 25px;
+        font-weight: 600;
+        color: gray;
+    }
+    .link {
+        text-align: center;
+        margin-top: 60px;
+        div {
+            margin-bottom: 30px;
         }
     }
 }
 
 .itemCount {
-    width: 40%;
+    width: 100%;
     margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
     border-radius: 1em;
-    p {
-        color: $Negro;
-        padding: 10px;
-        margin-left: 5px;
-    }
     div {
-        border: 1px solid $FondoOscurito;
+        .numbers {
+            border: 1px solid $Background_ColorNaranjaOscuro;
+        }
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -61,21 +63,10 @@
             padding: 10px;
         }
     }
-    div,
-    button,
-    a {
+    div {
         width: 90%;
         margin: 10px auto;
-        background-color: $Blanco;
         color: $Texto;
         border-radius: 7px;
     }
-}
-
-.thisButtons {
-    width: 40%;
-    margin: 30px auto;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 1em;
 }

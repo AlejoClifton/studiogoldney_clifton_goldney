@@ -33,21 +33,10 @@
             object-fit: contain;
             border-radius: 1em;
         }
-        a {
-            background-color: $Blanco;
-            text-decoration: none;
-            width: 80%;
-            padding: 10px;
-            border-radius: 0.5em;
-            &:hover{
-                background-color: $AmarilloApagado;
-            }
-        }
         p.Price{
             font-size: 20px;
             margin-bottom: 30px;
         }
-        a,
         p {
             color: $Texto;
         }

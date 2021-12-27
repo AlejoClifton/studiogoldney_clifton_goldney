@@ -1,0 +1,13 @@
+@import '../../global/Colors.scss';
+
+.footer {
+    margin-top: 420px;
+    background-color: $NavBarBackground;
+    padding: 30px;
+    h1,
+    h2 {
+        padding: 10px;
+        text-align: center;
+        color: $Blanco;
+    }
+}

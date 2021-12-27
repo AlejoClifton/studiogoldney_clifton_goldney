@@ -1,13 +1,35 @@
 import React from 'react';
 import ItemCart from './ItemCart';
 
-export const ItemsCartList = ({ items }) => {
+export const ItemsCartList = ({ items, total }) => {
     return (
-        <div className="listCartProduct">
+        <table className="listCartProduct">
+            <thead className="listCartHead">
+                <tr>
+                    <th>Productos</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th></th>
+                </tr>
+            </thead>
             {items.map((item) => (
                 <ItemCart key={item.oneProduct.id} item={item.oneProduct} count={item.count} />
             ))}
-        </div>
+            <tfoot>
+                <tr className="listCartTotal">
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <h2>Total:</h2>
+                    </td>
+                    <td>
+                        <h2>${total}</h2>
+                    </td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
     );
 };
 

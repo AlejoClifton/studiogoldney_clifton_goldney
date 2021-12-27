@@ -5,49 +5,63 @@
     color: $Titulo;
 }
 
+.linkClick {
+    background-color: $ColorButton;
+    text-decoration: none;
+    width: 80%;
+    padding: 10px;
+    border-radius: 0.5em;
+    color: white;
+    &:hover {
+        background-color: $Background_ColorNaranjaOscuro;
+    }
+}
+.buttonClick {
+    background-color: $ColorButton;
+    text-decoration: none;
+    width: 90%;
+    margin: auto;
+    border: none;
+    padding: 10px;
+    border-radius: 0.5em;
+    color: white;
+    &:hover {
+        background-color: $Background_ColorNaranjaOscuro;
+    }
+}
 .buttonLink {
     border: 2px solid $Texto;
     margin-top: 10px;
     width: 100%;
     padding: 10px;
     text-decoration: none;
-    background-color: $Blanco;
+    background-color: $ColorButton;
     border-radius: 1em;
     &:hover {
         background-color: $Texto;
         color: $Blanco;
     }
+}
+
+.buttonCart,
+.buttonCartEnd {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    color: $Blanco;
+    background-color: $ColorButton;
+    font-size: 25px;
+    font-weight: 600;
+    &:hover {
+        background-color: $Background_ColorNaranjaOscuro;
+    }
+}
+.buttonCartEnd {
+    margin-top: 50px;
 }
 
 .buttonCart {
     margin-top: 150px;
-    width: 100%;
-    padding: 10px;
-    border: 2px solid $Texto;
-    text-align: center;
-    color: $Texto;
-    border-radius: 1em;
-    background-color: $Blanco;
-    font-size: 25px;
-    font-weight: 600;
-    &:hover {
-        background-color: $Texto;
-        color: $Blanco;
-    }
-}
-
-.buttonCartEnd{
-    width: 100%;
-    padding: 10px;
-    border: 2px solid $Texto;
-    text-align: center;
-    color: $Texto;
-    border-radius: 1em;
-    background-color: $Blanco;
-    font-size: 25px;
-    font-weight: 600;
-    &:hover {
-        background-color: $Texto;
-        color: $Blanco;
-    }
+    margin-bottom: 50px;
 }

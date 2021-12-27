@@ -19,12 +19,12 @@ const ItemCount = ({ getStock, getInitial, onAdd }) => {
     return (
         <div className="itemCount">
                 <div>
-                    <div>
+                    <div className="numbers">
                         <i className="fas fa-minus" onClick={handleRemove}></i>
                         <span>{count}</span>
                         <i className="fas fa-plus" onClick={handleAdd}></i>
                     </div>
-                    <button className="buttonLink" onClick={add}>Agregar al Carrito</button>
+                    <button className="buttonClick" onClick={add}>Agregar al Carrito</button>
                 </div>
         </div>
     );

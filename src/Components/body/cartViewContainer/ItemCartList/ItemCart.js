@@ -9,15 +9,25 @@ const ItemCart = ({ item, count }) => {
     };
 
     return (
-        <div>
-            <div className="ItemCar">
-                <img src={item.img} alt="Imagen" />
-                <h1> {item.name} </h1>
-                <p className="Count">{count}</p>
-                <p className="Price">${item.price * count}</p>
-                <i onClick={removeItem} className="far fa-times-circle"></i>
-            </div>
-        </div>
+        <tbody className="listCartBody">
+            <tr>
+                <td>
+                    <img src={item.img} alt="Imagen" />
+                </td>
+                <td>
+                    <h1> {item.name} </h1>
+                </td>
+                <td>
+                    <h2 className="Count">{count}</h2>
+                </td>
+                <td>
+                    <h2 className="Price">${item.price * count}</h2>
+                </td>
+                <td>
+                    <i onClick={removeItem} className="far fa-times-circle"></i>
+                </td>
+            </tr>
+        </tbody>
     );
 };
 

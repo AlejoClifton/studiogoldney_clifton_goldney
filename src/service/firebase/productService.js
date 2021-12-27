@@ -37,3 +37,16 @@ export const getProductById = (itemCollection, parameter) => {
             console.log(error);
         });
 };
+
+export const getOrders = (itemCollection) => {
+    return new getDocs(collection(db, itemCollection))
+        .then((QuerySnapshot) => {
+            const products = QuerySnapshot.docs.map((doc) => {
+                return { id: doc.id, ...doc.data() };
+            });
+            return products;
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};

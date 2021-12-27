@@ -9,7 +9,7 @@
     align-content: flex-end;
     justify-content: space-between;
     align-items: center;
-    background-color: $AmarilloApagado;
+    background-color: $NavBarBackground;
     .navUser {
         font-size: 2em;
         &:hover {
@@ -28,7 +28,8 @@
                 transition: 0.1s;
                 font-size: 1em;
                 &:hover {
-                    font-size: 1.08em;
+                    border-radius: 1em;
+                    background-color: $Background_ColorNaranjaOscuro;
                 }
             }
         }
@@ -42,18 +43,18 @@
 }
 
 .CartWidget {
-    width: 5%;
+    width: 6%;
     display: flex;
     flex-direction: row;
     text-align: center;
     align-items: center;
     text-decoration: none;
-    background-color: $Fondo;
+    background-color: $Background_ColorNaranjaOscuro;
     padding: 0.5em;
     margin: auto;
     border-radius: 0.5em;
     &:hover {
-        background-color: $FondoOscurito;
+        background-color: #00A8A1;
     }
     i,
     p {

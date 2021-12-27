@@ -27,10 +27,10 @@ const ItemListContainer = ({ greeting, classItemListContainer }) => {
     }, [categoryId]);
 
     return (
-        <div className={classItemListContainer}>
+        <div className="itemListContainer">
             {list ? (
                 <div>
-                    <h1 className="title">{greeting}</h1>
+                    <h1 className="title">Productos</h1>
                     <ItemList products={listProduct} />
                 </div>
             ) : (

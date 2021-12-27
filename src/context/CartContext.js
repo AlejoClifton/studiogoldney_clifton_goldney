@@ -6,6 +6,7 @@ export const CartContext = ({ children }) => {
     const [itemCart, setItemCart] = useState([]);
     const [quantity, setQuantity] = useState(0);
     const [total, setTotal] = useState(0);
+    const [email, setEmail] = useState('');
 
     const addItemCart = (item) => {
         setItemCart([...itemCart, item]);
@@ -41,6 +42,10 @@ export const CartContext = ({ children }) => {
         return itemCart.find((item) => item.oneProduct.id === id);
     };
 
+    const updateEmail = (email) => {
+        setEmail(email);
+    };
+
     return (
         <Context.Provider
             value={{
@@ -48,6 +53,7 @@ export const CartContext = ({ children }) => {
                     itemCart,
                     quantity,
                     total,
+                    email,
                 },
                 itemCart,
                 addItemCart,
@@ -56,6 +62,7 @@ export const CartContext = ({ children }) => {
                 addQuantity,
                 addQuantityById,
                 itemById,
+                updateEmail,
             }}
         >
             {children}

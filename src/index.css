@@ -3,6 +3,7 @@ body {
   font-family: Georgia;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #E2E2E2;
 }
 
 code {

@@ -1,6 +1,13 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
+// console.log(process.env.REACT_APP_apiKey);
+// console.log(process.env.REACT_APP_authDomain);
+// console.log(process.env.REACT_APP_projectId);
+// console.log(process.env.REACT_APP_storageBucket);
+// console.log(process.env.REACT_APP_messagingSenderId);
+// console.log(process.env.REACT_APP_appId);
+
 const firebaseConfig = {
     apiKey: 'AIzaSyBpgo0GgEN7Ayo9f4ghmzbBt9bIsOSeaHQ',
     authDomain: 'studio-goldney.firebaseapp.com',
