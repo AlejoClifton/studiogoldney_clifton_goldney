@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/studiogoldney_clifton_goldney/static/css/main.2c00137c.chunk.css",
+    "main.js": "/studiogoldney_clifton_goldney/static/js/main.9cbd62c3.chunk.js",
+    "main.js.map": "/studiogoldney_clifton_goldney/static/js/main.9cbd62c3.chunk.js.map",
+    "runtime-main.js": "/studiogoldney_clifton_goldney/static/js/runtime-main.2ca78633.js",
+    "runtime-main.js.map": "/studiogoldney_clifton_goldney/static/js/runtime-main.2ca78633.js.map",
+    "static/js/2.2bcc0415.chunk.js": "/studiogoldney_clifton_goldney/static/js/2.2bcc0415.chunk.js",
+    "static/js/2.2bcc0415.chunk.js.map": "/studiogoldney_clifton_goldney/static/js/2.2bcc0415.chunk.js.map",
+    "static/js/3.8f5dc9d6.chunk.js": "/studiogoldney_clifton_goldney/static/js/3.8f5dc9d6.chunk.js",
+    "static/js/3.8f5dc9d6.chunk.js.map": "/studiogoldney_clifton_goldney/static/js/3.8f5dc9d6.chunk.js.map",
+    "index.html": "/studiogoldney_clifton_goldney/index.html",
+    "static/css/main.2c00137c.chunk.css.map": "/studiogoldney_clifton_goldney/static/css/main.2c00137c.chunk.css.map",
+    "static/js/2.2bcc0415.chunk.js.LICENSE.txt": "/studiogoldney_clifton_goldney/static/js/2.2bcc0415.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ca78633.js",
+    "static/js/2.2bcc0415.chunk.js",
+    "static/css/main.2c00137c.chunk.css",
+    "static/js/main.9cbd62c3.chunk.js"
+  ]
+}
