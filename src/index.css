@@ -1,12 +1,14 @@
 body {
-  margin: 0;
-  font-family: Georgia;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #E2E2E2;
+    margin: 0;
+    font-family: Georgia;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #e2e2e2;
 }
-
+div#root {
+    margin: 0;
+    padding: 0;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

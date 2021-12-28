@@ -1,19 +1,16 @@
-@import "../../../global/Colors.scss";
-@import "../../../global/global.scss";
+@import '../../../global/Colors.scss';
+@import '../../../global/global.scss';
 
 .itemListContainer {
-    margin: 30px 30px;
+    margin: 60px 0px;
     padding: 50px 50px;
     text-align: center;
-    border-radius: 1em;
-    h1{
-        color: $Titulo;
-    }
 }
 
 .listProduct {
     width: 100%;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-evenly;
@@ -21,24 +18,70 @@
     .ItemsProducts {
         background-color: $Fondo;
         margin: 20px auto;
-        padding: 20px;
-        width: calc(80% / 5);
+        padding: 30px;
         h1 {
-            font-size: 20px;
+            font-size: 15px;
+            color: $Titulo;
         }
         img {
             background-color: $Blanco;
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             object-fit: contain;
-            border-radius: 1em;
         }
-        p.Price{
-            font-size: 20px;
+        p.Price {
+            font-size: 18px;
             margin-bottom: 30px;
         }
         p {
             color: $Texto;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .itemListContainer {
+        margin: 60px 30px;
+        padding: 50px 50px;
+    }
+
+    .listProduct {
+        flex-direction: row;
+        .ItemsProducts {
+            width: calc(60% / 2);
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .itemListContainer {
+        margin: 30px 30px;
+        padding: 50px 50px;
+    }
+
+    .listProduct {
+        flex-direction: row;
+        .ItemsProducts {
+            width: calc(80% / 4);
+            img {
+                width: 200px;
+                height: 200px;
+            }
+            h1 {
+                font-size: 25px;
+                color: $Titulo;
+            }
+            p.Price {
+                font-size: 22px;
+                margin-bottom: 30px;
+            }
+            p {
+                color: $Texto;
+            }
         }
     }
 }

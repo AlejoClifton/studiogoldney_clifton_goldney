@@ -1,10 +1,7 @@
 @import '../../../global/Colors.scss';
 
 .dashBoardContainer {
-    margin: 30 px 30 px;
-    padding: 50 px 50 px;
     text-align: center;
-    border-radius: 1 em;
     margin-top: 150px;
 }
 .itemsDash {
@@ -12,18 +9,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 90%;
+    margin: auto;
 }
 .ItemsD {
     display: flex;
     flex-direction: column;
-    width: calc(90% / 3);
+    width: 90%;
+    margin-bottom: 30px;
     background-color: #f5f5f5;
     padding: 20px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-    
     text-align: left;
     h1 {
-        font-size: 1.5em;
+        font-size: 1em;
         font-weight: bold;
         color: $Titulo;
     }
@@ -52,5 +51,45 @@
             margin: 5px;
             color: gray;
         }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ItemsD {
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: $Titulo;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .ItemsD {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        width: calc(90% / 3);
+        background-color: #f5f5f5;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+        text-align: left;
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: $Titulo;
+        }
+        h2 {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        h3 {
+            font-size: 1em;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1em;
+        }
+        
     }
 }

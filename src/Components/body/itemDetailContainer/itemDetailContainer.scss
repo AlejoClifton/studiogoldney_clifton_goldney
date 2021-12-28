@@ -3,38 +3,42 @@
 @import '../../../global/loader.scss';
 
 .itemDetailContainer {
-    margin: 30px 30px;
-    padding: 50px 50px;
+    margin: 100px 0px;
+    padding: 20px;
     text-align: center;
     border-radius: 1em;
+    .title {
+        font-size: 1.5em;
+    }
 }
 .containerDetail {
     background-color: $Blanco;
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
-    padding: 30px;
     font-size: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     img {
-        width: 400px;
-        height: 400px;
+        width: 200px;
+        height: 200px;
         margin: auto;
         object-fit: contain;
-        border-radius: 1em;
-        margin-right: 50px;
     }
     color: $Negro;
     text-align: left;
     .span {
-        font-size: 25px;
+        font-size: 20px;
         font-weight: 600;
         color: $Texto;
     }
-    .spanBlock{
-        font-size: 25px;
+    .spanBlock {
+        font-size: 20px;
         font-weight: 600;
         color: gray;
+    }
+    p {
+        font-size: 15px;
+        padding: 12px;
     }
     .link {
         text-align: center;
@@ -68,5 +72,53 @@
         margin: 10px auto;
         color: $Texto;
         border-radius: 7px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .itemDetailContainer {
+        margin: 100px 0px;
+        padding: 20px;
+        text-align: center;
+        border-radius: 1em;
+        .title {
+            font-size: 2em;
+        }
+    }
+    .containerDetail {
+        img {
+            width: 300px;
+            height: 300px;
+        }
+        .span {
+            font-size: 25px;
+            font-weight: 600;
+            color: $Texto;
+        }
+        .spanBlock {
+            font-size: 25px;
+            font-weight: 600;
+            color: gray;
+        }
+        p {
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .itemDetailContainer {
+        margin: 30px 30px;
+        padding: 50px 50px;
+    }
+    .containerDetail {
+        width: 60%;
+        padding: 30px;
+        flex-direction: row;
+        img {
+            width: 400px;
+            height: 400px;
+            margin-right: 50px;
+        }
     }
 }

@@ -1,4 +1,4 @@
-@import "../../global/Colors.scss";
+@import '../../global/Colors.scss';
 
 .navBar {
     width: 100%;
@@ -6,23 +6,31 @@
     top: 0;
     z-index: 9;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-content: flex-end;
     justify-content: space-between;
     align-items: center;
     background-color: $NavBarBackground;
     .navUser {
-        font-size: 2em;
+        order: 1;
+        width: 60%;
+        font-size: 1.5em;
         &:hover {
             transform: scale(1.05);
         }
     }
     .navContainer {
-        display: flex;
-        width: 70%;
-        align-content: flex-end;
+        order: 3;
+        display: none;
+        width: 80%;
         justify-content: center;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: center;
         li {
+            margin: 0.9em;
             list-style: none;
             .list {
                 transition: 0.1s;
@@ -34,35 +42,161 @@
             }
         }
     }
+    .displayNav {
+        display: flex !important;
+    }
     .navUser,
     .list {
         padding: 20px;
         text-decoration: none;
         color: $NavBar;
     }
+    .buttonMenu {
+        width: 15%;
+        order: 4;
+        background-color: $Background_ColorNaranjaOscuro;
+        border-radius: 50%;
+        padding: 10px;
+        margin: 0 auto 10px auto;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+    }
+    .CartWidget {
+        order: 2;
+        width: 15%;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        text-decoration: none;
+        background-color: $Background_ColorNaranjaOscuro;
+        padding: 0.5em;
+        margin: auto;
+        border-radius: 0.5em;
+        &:hover {
+            background-color: #00a8a1;
+        }
+        i,
+        p {
+            color: $NavBar;
+            margin: auto;
+            text-align: start;
+            font-size: 20px;
+            width: calc(50% / 2);
+            padding: 5px;
+        }
+    }
 }
 
-.CartWidget {
-    width: 6%;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    text-decoration: none;
-    background-color: $Background_ColorNaranjaOscuro;
-    padding: 0.5em;
-    margin: auto;
-    border-radius: 0.5em;
-    &:hover {
-        background-color: #00A8A1;
+@media screen and (min-width: 768px) {
+    .navBar {
+        align-items: baseline;
+        justify-content: center;
+        .navUser {
+            order: 1;
+            width: 30%;
+            font-size: 2em;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+        .navContainer {
+            order: 4;
+            display: none;
+            width: 80%;
+            margin-right: 5%;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+            align-content: center;
+            li {
+                margin: 0.9em;
+                list-style: none;
+                .list {
+                    transition: 0.1s;
+                    font-size: 1em;
+                    &:hover {
+                        border-radius: 1em;
+                        background-color: $Background_ColorNaranjaOscuro;
+                    }
+                }
+            }
+        }
+        .displayNav {
+            display: flex !important;
+        }
+        .navUser,
+        .list {
+            padding: 20px;
+            text-decoration: none;
+            color: $NavBar;
+        }
+        .buttonMenu {
+            width: 15%;
+            margin-left: 7.5%;
+            order: 2;
+            padding: 10px 0px 10px 0px;
+            color: white;
+        }
+        .CartWidget {
+            order: 3;
+            width: 10%;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            align-items: center;
+            text-decoration: none;
+            background-color: $Background_ColorNaranjaOscuro;
+            padding: 0.5em;
+            margin: auto;
+            border-radius: 0.5em;
+            &:hover {
+                background-color: #00a8a1;
+            }
+            i,
+            p {
+                color: $NavBar;
+                margin: auto;
+                text-align: start;
+                font-size: 20px;
+                width: calc(50% / 2);
+                padding: 5px;
+            }
+        }
     }
-    i,
-    p {
-        color: $NavBar;
-        margin: auto;
-        text-align: start;
-        font-size: 30px;
-        width: calc(50% / 2);
-        padding: 5px;
+}
+
+@media screen and (min-width: 992px) {
+    .navBar {
+        align-items: center;
+        .navUser {
+            width: 15%;
+            text-align: center;
+            order: 1;
+            font-size: 1.6em;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+        .navContainer {
+            order: 2;
+            display: flex;
+            width: 60%;
+            flex-direction: row;
+        }
+        .buttonMenu {
+            display: none;
+            order: 4;
+        }
+        .CartWidget {
+            order: 3;
+            width: 5%;
+            i,
+            p {
+                font-size: 25px;
+            }
+        }
     }
 }
