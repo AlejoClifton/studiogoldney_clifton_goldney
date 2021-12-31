@@ -73,31 +73,27 @@ const ItemDetailContainer = () => {
                             <p>
                                 <span className="span">Precio:</span> ${oneProduct.price}
                             </p>
-                            {oneProduct.stock > 0 ? (
-                                <div>
-                                    <p>
-                                        <span className="span">Stock Disponible:</span> {oneProduct.stock}
-                                    </p>
-                                    {!purchase ? (
-                                        <ItemCount getStock={oneProduct.stock} onAdd={onAdd} getInitial={0} />
-                                    ) : (
-                                        <div className="link">
-                                            <div>
-                                                <Link className="linkClick" to={'/'}>
-                                                    Seleccionar otro Artículo
-                                                </Link>
-                                            </div>
-                                            <div>
-                                                <Link className="linkClick" to={'/cart'}>
-                                                    Ir al Carrito
-                                                </Link>
-                                            </div>
+                            <div>
+                                <p>
+                                    <span className="span">Stock Disponible:</span> {oneProduct.stock}
+                                </p>
+                                {!purchase ? (
+                                    <ItemCount getStock={oneProduct.stock} onAdd={onAdd} getInitial={0} />
+                                ) : (
+                                    <div className="link">
+                                        <div>
+                                            <Link className="linkClick" to={'/'}>
+                                                Seleccionar otro Artículo
+                                            </Link>
                                         </div>
-                                    )}
-                                </div>
-                            ) : (
-                                <p className="spanBlock">Stock No Disponible</p>
-                            )}
+                                        <div>
+                                            <Link className="linkClick" to={'/cart'}>
+                                                Ir al Carrito
+                                            </Link>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>

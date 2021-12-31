@@ -1,4 +1,4 @@
-import { collection, getDocs, query, where, doc, getDoc } from 'firebase/firestore';
+import { collection, getDocs, query, where, doc, getDoc, writeBatch, addDoc } from 'firebase/firestore';
 import { db } from './firebase';
 
 export const getProducts = (itemCollection, category = '') => {
@@ -49,4 +49,38 @@ export const getOrders = (itemCollection) => {
         .catch((error) => {
             console.log(error);
         });
+};
+
+export const getProductStock = (compra) => {
+    const batch = writeBatch(db);
+    const outOfStock = [];
+
+    compra.items.forEach((item) => {
+        getDoc(doc(db, 'items', item.oneProduct.id))
+            .then((docSnapshot) => {
+                if (docSnapshot.data().stock >= item.count) {
+                    batch.update(doc(db, 'items', docSnapshot.id), { stock: docSnapshot.data().stock - item.count });
+                } else {
+                    outOfStock.push({ id: docSnapshot.id, ...docSnapshot.data() });
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+
+    return { outOfStock, batch };
+};
+
+export const outOfStockProduct = (compra, batch, outOfStock) => {
+    if (outOfStock.length === 0) {
+        return new addDoc(collection(db, 'orders'), compra)
+            .then(({ id }) => {
+                batch.commit()
+                return id;
+            })
+            .catch((error) => {
+                return error;
+            })
+    }
 };

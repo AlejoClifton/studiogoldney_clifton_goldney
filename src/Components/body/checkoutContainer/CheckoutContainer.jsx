@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './checkoutContainer.scss';
 
-import { writeBatch, getDoc, doc, Timestamp, collection, addDoc } from 'firebase/firestore';
-import { db } from '../../../service/firebase/firebase';
+import { getProductStock, outOfStockProduct } from '../../../service/firebase/productService';
 import CartContext from '../../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import NotificationContext from '../../../context/NotificationContext';
@@ -15,8 +14,8 @@ const CheckoutContainer = () => {
     const [ProccessingOrder, setProccessingOrder] = useState(false);
     const navigate = useNavigate();
 
-    const batch = writeBatch(db);
-    const outOfStock = [];
+    // const batch = writeBatch(db);
+    // const outOfStock = [];
 
     const llenarFormulario = (e) => {
         const { name, value } = e.target;
@@ -33,42 +32,25 @@ const CheckoutContainer = () => {
             buyer: { nombre: valores.nombre, apellido: valores.apellido, phone: valores.telefono, email: valores.email },
             items: itemCart,
             total: values.total,
-            date: Timestamp.fromDate(new Date()),
         };
 
-        compra.items.forEach((item) => {
-            getDoc(doc(db, 'items', item.oneProduct.id))
-                .then((docSnapshot) => {
-                    if (docSnapshot.data().stock >= item.count) {
-                        batch.update(doc(db, 'items', docSnapshot.id), { stock: docSnapshot.data().stock - item.count });
-                    } else {
-                        outOfStock.push({ id: docSnapshot.id, ...docSnapshot.data() });
-                    }
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        });
+        let productSotck = getProductStock(compra);
 
-        if (outOfStock.length === 0) {
-            addDoc(collection(db, 'orders'), compra)
-                .then(({ id }) => {
-                    batch.commit().then(() => {
-                        setNotification('succes', 'Su orden es: ' + id);
-                    });
-                })
-                .catch((error) => {
-                    setNotification('error', 'Error ejecutando la orden' + error);
-                })
-                .finally(() => {
-                    updateEmail(compra.buyer.email);
-                    setTimeout(() => {
-                        navigate('/dashboard');
-                        clearItems();
-                    }, 4000);
-                    setProccessingOrder(true);
-                });
-        }
+        outOfStockProduct(compra, productSotck.batch, productSotck.outOfStock)
+            .then((res) => {
+                setNotification('succes', 'Su orden es: ' + res);
+            })
+            .catch((err) => {
+                setNotification('error', 'Error ejecutando la orden' + err);
+            })
+            .finally(() => {
+                updateEmail(compra.buyer.email);
+                setTimeout(() => {
+                    navigate('/dashboard');
+                    clearItems();
+                }, 4000);
+                setProccessingOrder(true);
+            });
     };
 
     return (
