@@ -3,10 +3,11 @@ import { getProducts } from '../../../service/firebase/productService';
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Loader from '../../loader/Loader';
 
 import './itemListContainer.scss';
 
-const ItemListContainer = ({ greeting, classItemListContainer }) => {
+const ItemListContainer = () => {
     const [listProduct, setListProduct] = useState([]);
     const { categoryId } = useParams();
     const [list, setList] = useState(false);
@@ -30,18 +31,11 @@ const ItemListContainer = ({ greeting, classItemListContainer }) => {
         <div className="itemListContainer">
             {list ? (
                 <div>
-                    <h1 className="title">Productos</h1>
+                    <h1 className="title">{categoryId}</h1>
                     <ItemList products={listProduct} />
                 </div>
             ) : (
-                <div>
-                    <h2>Cargando...</h2>
-                    <div className="lds-facebook">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
+                <Loader />
             )}
         </div>
     );

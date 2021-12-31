@@ -4,46 +4,54 @@ const Context = React.createContext();
 
 export const CartContext = ({ children }) => {
     const [itemCart, setItemCart] = useState([]);
-    const [quantity, setQuantity] = useState(0);
-    const [total, setTotal] = useState(0);
-    const [email, setEmail] = useState('');
 
     const addItemCart = (item) => {
-        setItemCart([...itemCart, item]);
-        setTotal(total + item.oneProduct.price * item.count);
+        const flag = isInCart(item);
+
+        if (!flag) {
+            setItemCart([...itemCart, item]);
+            return true;
+        } else {
+            let productoRepetido = itemCart.find((producto) => producto.item.id === item.item.id);
+
+            if (productoRepetido.count + item.count <= productoRepetido.item.stock) {
+                productoRepetido.count += item.count;
+                let productoSinElRepetido = itemCart.filter((producto) => producto.item.id !== item.item.id);
+                setItemCart([...productoSinElRepetido, productoRepetido]);
+                return true;
+            } else {
+                return false;
+            }
+        }
     };
 
-    const removeItemCart = (itemId, itemQuantity) => {
-        let eliminado = itemCart.filter((item) => item.oneProduct.id === itemId);
-        let sum = eliminado[0].oneProduct.price * eliminado[0].count;
+    const getCount = () => {
+        let subTotal = 0;
+        itemCart.forEach((item) => {
+            subTotal += item.count;
+        });
+        return subTotal;
+    };
 
-        setItemCart(itemCart.filter((item) => item.oneProduct.id !== itemId));
-        setQuantity(quantity - itemQuantity);
+    const getTotal = () => {
+        let subTotal = 0;
 
-        setTotal(total - sum);
+        itemCart.forEach((item) => {
+            subTotal += item.count * item.item.price;
+        });
+        return subTotal;
     };
 
     const clearItems = () => {
         setItemCart([]);
-        setQuantity(0);
     };
 
-    const addQuantity = (itemQuantity) => {
-        setQuantity(quantity + itemQuantity);
+    const isInCart = (item) => {
+        return itemCart.some((itemCart) => itemCart.item.id === item.item.id);
     };
 
-    const addQuantityById = (itemId, itemQuantity) => {
-        const item = itemCart.find((item) => item.oneProduct.id === itemId);
-        item.count = item.count + itemQuantity;
-        addQuantity(itemQuantity);
-    };
-
-    const itemById = (id) => {
-        return itemCart.find((item) => item.oneProduct.id === id);
-    };
-
-    const updateEmail = (email) => {
-        setEmail(email);
+    const removeItemCart = (itemId) => {
+        setItemCart(itemCart.filter((item) => item.item.id !== itemId));
     };
 
     return (
@@ -51,18 +59,12 @@ export const CartContext = ({ children }) => {
             value={{
                 values: {
                     itemCart,
-                    quantity,
-                    total,
-                    email,
                 },
-                itemCart,
                 addItemCart,
-                removeItemCart,
+                getCount,
+                getTotal,
                 clearItems,
-                addQuantity,
-                addQuantityById,
-                itemById,
-                updateEmail,
+                removeItemCart,
             }}
         >
             {children}

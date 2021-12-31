@@ -1,21 +1,17 @@
-import './navbar.scss';
+import './navBar.scss';
 import NavBarList from './navBarList/NavBarList';
 
 import { useEffect, useState } from 'react';
 
-import { collection, getDocs} from 'firebase/firestore';
-import { db } from '../../service/firebase/firebase';
+import { getProducts } from '../../service/firebase/productService';
 
 const NavBar = () => {
     const [category, setCategory] = useState([]);
 
     useEffect(() => {
-        getDocs(collection(db, 'category'))
-            .then((QuerySnapshot) => {
-                const products = QuerySnapshot.docs.map((doc) => {
-                    return { id: doc.id, ...doc.data() };
-                });
-                setCategory(products);
+        getProducts('category')
+            .then((res) => {
+                setCategory(res);
             })
             .catch((error) => {
                 console.log(error);

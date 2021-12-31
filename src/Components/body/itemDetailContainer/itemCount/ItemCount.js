@@ -11,7 +11,7 @@ const ItemCount = ({ getStock, getInitial, onAdd }) => {
     };
 
     const handleRemove = () => {
-        if (count > 0) {
+        if (count > getInitial) {
             setCount(count - 1);
         }
     };

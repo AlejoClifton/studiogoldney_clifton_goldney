@@ -14,7 +14,7 @@ export const ItemsCartList = ({ items, total }) => {
                 </tr>
             </thead>
             {items.map((item) => (
-                <ItemCart key={item.oneProduct.id} item={item.oneProduct} count={item.count} />
+                <ItemCart key={item.item.id} item={item.item} count={item.count} />
             ))}
             <tfoot>
                 <tr className="listCartTotal">

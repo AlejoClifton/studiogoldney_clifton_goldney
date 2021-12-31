@@ -5,17 +5,17 @@ import { getProductStock, outOfStockProduct } from '../../../service/firebase/pr
 import CartContext from '../../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import NotificationContext from '../../../context/NotificationContext';
+import UserContext from '../../../context/UserContext';
 import { Link } from 'react-router-dom';
 
 const CheckoutContainer = () => {
-    const { itemCart, clearItems, values, updateEmail } = useContext(CartContext);
+    const { clearItems, getTotal, values} = useContext(CartContext);
+    const { updateEmail } = useContext(UserContext);
     const { setNotification } = useContext(NotificationContext);
+
     const [valores, setValores] = useState({ nombre: '', apellido: '', telefono: '', email: '' });
     const [ProccessingOrder, setProccessingOrder] = useState(false);
     const navigate = useNavigate();
-
-    // const batch = writeBatch(db);
-    // const outOfStock = [];
 
     const llenarFormulario = (e) => {
         const { name, value } = e.target;
@@ -30,8 +30,8 @@ const CheckoutContainer = () => {
 
         const compra = {
             buyer: { nombre: valores.nombre, apellido: valores.apellido, phone: valores.telefono, email: valores.email },
-            items: itemCart,
-            total: values.total,
+            items: values.itemCart,
+            total: getTotal(),
         };
 
         let productSotck = getProductStock(compra);
@@ -55,48 +55,26 @@ const CheckoutContainer = () => {
 
     return (
         <div className="checkoutContainer">
-            {itemCart.length > 0 ? (
+            {values.itemCart.length > 0 ? (
                 <div>
                     {!ProccessingOrder ? (
                         <form method="post" onSubmit={checkout}>
                             <h1>Ingresar Datos</h1>
                             <div className="containerText">
-                                <input
-                                    type="text"
-                                    placeholder="Nombre"
-                                    name="nombre"
-                                    id="nombre"
-                                    required
-                                    onChange={llenarFormulario}
-                                />
+                                <input type="text" placeholder="Nombre" name="nombre" id="nombre" required onChange={llenarFormulario}/>
                             </div>
                             <div className="containerText">
-                                <input
-                                    type="text"
-                                    placeholder="Apellido"
-                                    name="apellido"
-                                    id="apellido"
-                                    required
-                                    onChange={llenarFormulario}
+                                <input type="text" placeholder="Apellido" name="apellido" id="apellido" required onChange={llenarFormulario}
                                 />
                             </div>
                             <div className="containerText">
                                 <input type="email" placeholder="Email" name="email" id="email" required onChange={llenarFormulario} />
                             </div>
                             <div className="containerText">
-                                <input
-                                    type="phone"
-                                    placeholder="Teléfono"
-                                    name="telefono"
-                                    id="telefono"
-                                    required
-                                    onChange={llenarFormulario}
-                                />
+                                <input type="phone" placeholder="Teléfono" name="telefono" id="telefono" required onChange={llenarFormulario}/>
                             </div>
-                            <p>Total: ${values.total}</p>
-                            <div>
-                                <button type="submit">Enviar</button>
-                            </div>
+                            <p>Total: ${getTotal()}</p>
+                            <div><button type="submit">Enviar</button></div>
                         </form>
                     ) : (
                         <h1>Será redirigido al Dashboard</h1>
@@ -105,9 +83,7 @@ const CheckoutContainer = () => {
             ) : (
                 <div>
                     <h1>No hay productos en el carrito</h1>
-                    <Link to="/">
-                        <button className="buttonCart">Volver a la tienda</button>
-                    </Link>
+                    <Link to="/"><button className="buttonCart">Volver a la tienda</button></Link>
                 </div>
             )}
         </div>

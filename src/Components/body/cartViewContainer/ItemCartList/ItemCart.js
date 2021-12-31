@@ -5,7 +5,7 @@ const ItemCart = ({ item, count }) => {
     const { removeItemCart } = useContext(CartContext);
 
     const removeItem = () => {
-        removeItemCart(item.id, count);
+        removeItemCart(item.id);
     };
 
     return (

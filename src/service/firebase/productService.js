@@ -56,7 +56,7 @@ export const getProductStock = (compra) => {
     const outOfStock = [];
 
     compra.items.forEach((item) => {
-        getDoc(doc(db, 'items', item.oneProduct.id))
+        getDoc(doc(db, 'items', item.item.id))
             .then((docSnapshot) => {
                 if (docSnapshot.data().stock >= item.count) {
                     batch.update(doc(db, 'items', docSnapshot.id), { stock: docSnapshot.data().stock - item.count });

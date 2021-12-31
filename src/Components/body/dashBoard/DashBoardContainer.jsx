@@ -2,12 +2,13 @@ import React, { useContext, useState, useEffect } from 'react';
 import './dashBoardContainer.scss';
 import { Link } from 'react-router-dom';
 
-import CartContext from '../../../context/CartContext';
+import UserContext from '../../../context/UserContext';
 import { getOrders } from '../../../service/firebase/productService';
 import ItemsDashBoard from './itemsDashBoard/ItemsDashBoard';
+import Loader from '../../loader/Loader';
 
 const DashBoardContainer = () => {
-    const { values } = useContext(CartContext);
+    const { values } = useContext(UserContext);
     const [listProduct, setListProduct] = useState([]);
     const [list, setList] = useState(false);
 
@@ -36,14 +37,7 @@ const DashBoardContainer = () => {
                             <ItemsDashBoard products={listProduct} />
                         </div>
                     ) : (
-                        <div>
-                            <h2>Cargando...</h2>
-                            <div className="lds-facebook">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
+                        <Loader />
                     )}
                     <Link to="/">
                         <button className="buttonCart">Volver a la tienda</button>
