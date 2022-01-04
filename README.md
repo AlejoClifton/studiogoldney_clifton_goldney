@@ -58,8 +58,8 @@ Agregar un .env con los datos de firebase para hacer funcionar la aplicación.
 
 Los datos que tienen cuando lo agregas al carrito, es un objeto de {item, count};
 
--   Item\* -> es el objeto de producto que se agregó al carrito.
--   Count\* -> es el número de productos que se agregaron al carrito.
+-   Item -> es el objeto de producto que se agregó al carrito.
+-   Count -> es el número de productos que se agregaron al carrito.
 
 ### ¿Qué datos tiene cuando generas una orden?
 
@@ -71,23 +71,23 @@ Los datos que tiene una orden son:
 
 ## ¿Cómo funciona el proyecto?
 
-### ItemListContainer
+### `ItemListContainer`
 
 El ItemListContainer, contiene una lista de todos los productos que se encuentran en producto.
 
-### ItemDetailContainer
+### `ItemDetailContainer`
 
 El ItemDetailContainer, contiene los detalles de un producto específico, que este, es recibido por ID mediante el `useParams` de React Router.
 
-### cartViewContainer
+### `CartViewContainer`
 
 El cartViewContainer, contiene una lista de todos los productos que se encuentran en el carrito de compras que el usuario eligió.
 
-### CheckoutContainer
+### `CheckoutContainer`
 
 El checkoutContainer, contiene un formulario con restricciones para que se registren los datos del usuario y así sumarlo a la base de datos.
 
-### DashboardContainer
+### `DashboardContainer`
 
 El DashboardContainer, contiene una lista de todos los productos que el usuario compró mediante su email.
 
