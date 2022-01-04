@@ -38,12 +38,12 @@ Agregar un .env con los datos de firebase para hacer funcionar la aplicación.
 
 ## Texto por ejemplo
 
-REACT_APP_API_KEY=OIJASODIJasIsOSeaHQ
-REACT_APP_AUTH_DOMAIN=SDOKASOD.firebaseapp.com
-REACT_APP_PROJECT_ID=APOSKDAPOSDK
-REACT_APP_STORAGE_BUCKET=APOSKDPOASKDO.appspot.com
-REACT_APP_MESSAGING_SENDER_ID=102830192830912
-REACT_APP_APP_ID=1:1982301298:web:e572ff92ce82d1ee79fc67
+-   REACT_APP_API_KEY=OIJASODIJasIsOSeaHQ
+-   REACT_APP_AUTH_DOMAIN=SDOKASOD.firebaseapp.com
+-   REACT_APP_PROJECT_ID=APOSKDAPOSDK
+-   REACT_APP_STORAGE_BUCKET=APOSKDPOASKDO.appspot.com
+-   REACT_APP_MESSAGING_SENDER_ID=102830192830912
+-   REACT_APP_APP_ID=1:1982301298:web:e572ff92ce82d1ee79fc67
 
 ### Rutas de la APP
 
@@ -65,9 +65,9 @@ Los datos que tienen cuando lo agregas al carrito, es un objeto de {item, count}
 
 Los datos que tiene una orden son:
 
-- buyer -> es un objeto con los datos del usuario que realizó la orden.
-- items -> es un objeto de {item, count};
-- total -> el precio total comprado.
+-   buyer -> es un objeto con los datos del usuario que realizó la orden.
+-   items -> es un objeto de {item, count};
+-   total -> el precio total comprado.
 
 ## ¿Cómo funciona el proyecto?
 
