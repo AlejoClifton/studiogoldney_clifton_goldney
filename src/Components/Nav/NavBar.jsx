@@ -1,4 +1,5 @@
 import './navBar.scss';
+
 import NavBarList from './navBarList/NavBarList';
 
 import { useEffect, useState } from 'react';
