@@ -8,7 +8,6 @@ const ItemsD = ({ product }) => {
             <p>Productos:</p>
             {product.items.length > 0 &&
                 product.items.map((item) => {
-                    console.log(item.item.name);
                     return (
                         <ul className="ulItemsD" key={item.item.id}>
                             <li>{item.item.name}</li>

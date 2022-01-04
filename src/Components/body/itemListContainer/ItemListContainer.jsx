@@ -1,5 +1,5 @@
 import ItemList from './itemList/ItemList';
-import { getProducts } from '../../../service/firebase/productService';
+import { getFirebase } from '../../../service/firebase/productService';
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -13,7 +13,7 @@ const ItemListContainer = () => {
     const [list, setList] = useState(false);
 
     useEffect(() => {
-        getProducts('items', categoryId)
+        getFirebase('items', categoryId)
             .then((res) => {
                 setListProduct(res);
                 if (res.length === 0) {

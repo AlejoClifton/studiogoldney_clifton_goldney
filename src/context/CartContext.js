@@ -12,12 +12,12 @@ export const CartContext = ({ children }) => {
             setItemCart([...itemCart, item]);
             return true;
         } else {
-            let productoRepetido = itemCart.find((producto) => producto.item.id === item.item.id);
+            let productRepeat = itemCart.find((product) => product.item.id === item.item.id);
 
-            if (productoRepetido.count + item.count <= productoRepetido.item.stock) {
-                productoRepetido.count += item.count;
-                let productoSinElRepetido = itemCart.filter((producto) => producto.item.id !== item.item.id);
-                setItemCart([...productoSinElRepetido, productoRepetido]);
+            if (productRepeat.count + item.count <= productRepeat.item.stock) {
+                productRepeat.count += item.count;
+                let productNoRepeat = itemCart.filter((product) => product.item.id !== item.item.id);
+                setItemCart([...productNoRepeat, productRepeat]);
                 return true;
             } else {
                 return false;

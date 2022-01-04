@@ -3,7 +3,7 @@ import './dashBoardContainer.scss';
 import { Link } from 'react-router-dom';
 
 import UserContext from '../../../context/UserContext';
-import { getOrders } from '../../../service/firebase/productService';
+import { getFirebase } from '../../../service/firebase/productService';
 import ItemsDashBoard from './itemsDashBoard/ItemsDashBoard';
 import Loader from '../../loader/Loader';
 
@@ -13,7 +13,7 @@ const DashBoardContainer = () => {
     const [list, setList] = useState(false);
 
     useEffect(() => {
-        getOrders('orders')
+        getFirebase('orders')
             .then((res) => {
                 setListProduct(res.filter((item) => item.buyer.email === values.email));
                 if (res.length === 0) {

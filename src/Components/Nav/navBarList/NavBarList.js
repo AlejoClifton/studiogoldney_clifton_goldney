@@ -5,16 +5,16 @@ import NavBarCategory from './cartWidget/NavBarCategory';
 import CartWidget from './cartWidget/CartWidget';
 
 const NavBarList = ({ categories }) => {
-    const [estado, setEstado] = useState(false);
+    const [state, setState] = useState(false);
     const [clase, setClase] = useState('navContainer')
     const menuButton = () => {
-        if (!estado) {
+        if (!state) {
             setClase('navContainer displayNav');
-            setEstado(true);
+            setState(true);
         }
         else {
             setClase('navContainer');
-            setEstado(false);
+            setState(false);
         }
     };
     return (

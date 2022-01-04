@@ -13,25 +13,26 @@ const CheckoutContainer = () => {
     const { updateEmail } = useContext(UserContext);
     const { setNotification } = useContext(NotificationContext);
 
-    const [valores, setValores] = useState({ nombre: '', apellido: '', telefono: '', email: '' });
+    const [valores, setValores] = useState({ name: '', lastName: '', phone: '', email: '' });
 
-    const [errorNombre, setErrorNombre] = useState(false);
-    const [errorApellido, setErrorApellido] = useState(false);
-    const [errorTelefono, setErrorTelefono] = useState(false);
+    const [errorName, setErrorName] = useState(false);
+    const [errorLastName, setErrorLastName] = useState(false);
+    const [errorPhone, setErrorPhone] = useState(false);
     const [errorEmail, setErrorEmail] = useState(false);
 
     const [ProccessingOrder, setProccessingOrder] = useState(false);
     const navigate = useNavigate();
 
-    const llenarFormulario = (e) => {
+    const fillOutForm = (e) => {
         const { name, value } = e.target;
+        console.log(e.target.value);
         setValores({
             ...valores,
             [name]: value,
         });
     };
 
-    const handleOnKeyDownTelefono = (e) => {
+    const handleOnKeyDownPhone = (e) => {
         if (e.keyCode === 8 || e.keyCode === 9 || e.keyCode === 13 || (e.keyCode >= 48 && e.keyCode <= 57)) {
         } else {
             e.preventDefault();
@@ -41,42 +42,42 @@ const CheckoutContainer = () => {
     const validateForm = (e) => {
         e.preventDefault();
 
-        if (!valores.nombre) {
-            setErrorNombre(true);
+        if (!valores.name) {
+            setErrorName(true);
         } else {
-            setErrorNombre(false);
+            setErrorName(false);
         }
-        if (!valores.apellido) {
-            setErrorApellido(true);
+        if (!valores.lastName) {
+            setErrorLastName(true);
         } else {
-            setErrorApellido(false);
+            setErrorLastName(false);
         }
         if (!valores.email) {
             setErrorEmail(true);
         } else {
             setErrorEmail(false);
         }
-        if (!valores.telefono) {
-            setErrorTelefono(true);
+        if (!valores.phone) {
+            setErrorPhone(true);
         } else {
-            setErrorTelefono(false);
+            setErrorPhone(false);
         }
 
-        if (valores.nombre && valores.apellido && valores.email && valores.telefono) {
+        if (valores.name && valores.lastName && valores.email && valores.phone) {
             checkout();
         }
     };
 
     const checkout = () => {
-        const compra = {
-            buyer: { nombre: valores.nombre, apellido: valores.apellido, phone: valores.telefono, email: valores.email },
+        const purchase = {
+            buyer: { nombre: valores.name, apellido: valores.lastName, phone: valores.phone, email: valores.email },
             items: values.itemCart,
             total: getTotal(),
         };
 
-        let productSotck = getProductStock(compra);
+        let productSotck = getProductStock(purchase);
 
-        outOfStockProduct(compra, productSotck.batch, productSotck.outOfStock)
+        outOfStockProduct(purchase, productSotck.batch, productSotck.outOfStock)
             .then((res) => {
                 setNotification('succes', 'Su orden es: ' + res);
             })
@@ -84,7 +85,7 @@ const CheckoutContainer = () => {
                 setNotification('error', 'Error ejecutando la orden' + err);
             })
             .finally(() => {
-                updateEmail(compra.buyer.email);
+                updateEmail(purchase.buyer.email);
                 setTimeout(() => {
                     navigate('/dashboard');
                     clearItems();
@@ -101,27 +102,27 @@ const CheckoutContainer = () => {
                         <form method="post" onSubmit={validateForm}>
                             <h1>Ingresar Datos</h1>
                             <div className="containerText">
-                                <input type="text" placeholder="Nombre" name="nombre" id="nombre" onChange={llenarFormulario} />
-                                {errorNombre && <p className="error">El nombre es requerido</p>}
+                                <input type="text" placeholder="name" name="name" id="name" onChange={fillOutForm} />
+                                {errorName && <p className="error">El nombre es requerido</p>}
                             </div>
                             <div className="containerText">
-                                <input type="text" placeholder="Apellido" name="apellido" id="apellido" onChange={llenarFormulario} />
-                                {errorApellido && <p className="error">El apellido es requerido</p>}
+                                <input type="text" placeholder="lastName" name="lastName" id="lastName" onChange={fillOutForm} />
+                                {errorLastName && <p className="error">El apellido es requerido</p>}
                             </div>
                             <div className="containerText">
-                                <input type="email" placeholder="Email" name="email" id="email" onChange={llenarFormulario} />
+                                <input type="email" placeholder="email" name="email" id="email" onChange={fillOutForm} />
                                 {errorEmail && <p className="error">El email es requerido</p>}
                             </div>
                             <div className="containerText">
                                 <input
                                     type="tel"
-                                    placeholder="Teléfono"
-                                    name="telefono"
-                                    id="telefono"
-                                    onKeyDown={handleOnKeyDownTelefono}
-                                    onChange={llenarFormulario}
+                                    placeholder="phone"
+                                    name="phone"
+                                    id="phone"
+                                    onKeyDown={handleOnKeyDownPhone}
+                                    onChange={fillOutForm}
                                 />
-                                {errorTelefono && <p className="error">El teléfono es requerido</p>}
+                                {errorPhone && <p className="error">El teléfono es requerido</p>}
                             </div>
                             <p>Total: ${getTotal()}</p>
                             <div>

@@ -1,30 +1,24 @@
 import { collection, getDocs, query, where, doc, getDoc, writeBatch, addDoc } from 'firebase/firestore';
 import { db } from './firebase';
 
-export const getProducts = (itemCollection, category = '') => {
-    if (category === '') {
-        return new getDocs(collection(db, itemCollection))
+export const getFirebase = (itemCollection, category) => {
+    return new Promise((resolve, reject) => {
+        const collectionQuery =
+            itemCollection && category
+                ? query(collection(db, itemCollection), where('categoryId', '==', category))
+                : collection(db, itemCollection);
+
+        getDocs(collectionQuery)
             .then((QuerySnapshot) => {
                 const products = QuerySnapshot.docs.map((doc) => {
                     return { id: doc.id, ...doc.data() };
                 });
-                return products;
+                resolve(products);
             })
             .catch((error) => {
                 console.log(error);
             });
-    } else {
-        return new getDocs(query(collection(db, itemCollection), where('categoryId', '==', category)))
-            .then((QuerySnapshot) => {
-                const products = QuerySnapshot.docs.map((doc) => {
-                    return { id: doc.id, ...doc.data() };
-                });
-                return products;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
+    });
 };
 
 export const getProductById = (itemCollection, parameter) => {
@@ -38,24 +32,11 @@ export const getProductById = (itemCollection, parameter) => {
         });
 };
 
-export const getOrders = (itemCollection) => {
-    return new getDocs(collection(db, itemCollection))
-        .then((QuerySnapshot) => {
-            const products = QuerySnapshot.docs.map((doc) => {
-                return { id: doc.id, ...doc.data() };
-            });
-            return products;
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-};
-
-export const getProductStock = (compra) => {
+export const getProductStock = (purchase) => {
     const batch = writeBatch(db);
     const outOfStock = [];
 
-    compra.items.forEach((item) => {
+    purchase.items.forEach((item) => {
         getDoc(doc(db, 'items', item.item.id))
             .then((docSnapshot) => {
                 if (docSnapshot.data().stock >= item.count) {
@@ -72,15 +53,15 @@ export const getProductStock = (compra) => {
     return { outOfStock, batch };
 };
 
-export const outOfStockProduct = (compra, batch, outOfStock) => {
+export const outOfStockProduct = (purchase, batch, outOfStock) => {
     if (outOfStock.length === 0) {
-        return new addDoc(collection(db, 'orders'), compra)
+        return new addDoc(collection(db, 'orders'), purchase)
             .then(({ id }) => {
-                batch.commit()
+                batch.commit();
                 return id;
             })
             .catch((error) => {
                 return error;
-            })
+            });
     }
 };

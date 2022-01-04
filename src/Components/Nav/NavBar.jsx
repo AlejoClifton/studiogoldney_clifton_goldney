@@ -4,13 +4,13 @@ import NavBarList from './navBarList/NavBarList';
 
 import { useEffect, useState } from 'react';
 
-import { getProducts } from '../../service/firebase/productService';
+import { getFirebase } from '../../service/firebase/productService';
 
 const NavBar = () => {
     const [category, setCategory] = useState([]);
 
     useEffect(() => {
-        getProducts('category')
+        getFirebase('category')
             .then((res) => {
                 setCategory(res);
             })
