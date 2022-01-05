@@ -1,42 +1,42 @@
 # Studio Goldney
 
-Este es un proyecto realizado de forma completa con React JS en el curso de Coderhouse.
+This is a project done completely with React JS in the Coderhouse course.
 
-## Instalación, Ejecución
+## Installation, Execution
 
-Para poder ejecutar el programa deberás...
+In order to run the program you must ...
 
-### `npm i o npm install`
+### `npm i or npm install`
 
-Con npm i o npm install podrás instalar todas las dependecias necesarias para hacer funcionar la aplicación.
+With npm i or npm install you will be able to install all the necessary dependencies to make the application work.
 
 ### `npm start`
 
-Con npm start, podrás iniciar la aplicación, por lo general, se te abrirá sólo al cabo de unos minutos, si no es así, entrando a [http://localhost:3000], podrás ver el resultado.
+With npm start, you can start the application, in general, it will open only after a few minutes, if not, entering [http: // localhost: 3000], you will see the result.
 
 ### `Cntrl + C`
 
-Con control + C, podrás finalizar la ejecución del programa.
+With control + C, you can end the execution of the program.
 
-## ¿Qué lenguajes de programación utilicé para realizar esto?
+## What programming languages did I use to do this?
 
-Los lenguajes de programación que utilicé fueron:
+The programming languages I used were:
 
--   Html
--   Css/Sass
--   JavaScript
--   React JS
--   Node JS (Para la ejecución del servidor)
+- Html
+- Css / Sass
+- JavaScript
+- React JS
+- Node JS (For server execution)
 
-La base de datos usada es:
+The database used is:
 
--   Firebase
+- Firebase
 
 ### `.env`
 
-Agregar un .env con los datos de firebase para hacer funcionar la aplicación.
+Add an .env with the firebase data to make the app work.
 
-## Texto por ejemplo
+## Text for example
 
 -   REACT_APP_API_KEY=OIJASODIJasIsOSeaHQ
 -   REACT_APP_AUTH_DOMAIN=SDOKASOD.firebaseapp.com
@@ -45,52 +45,52 @@ Agregar un .env con los datos de firebase para hacer funcionar la aplicación.
 -   REACT_APP_MESSAGING_SENDER_ID=102830192830912
 -   REACT_APP_APP_ID=1:1982301298:web:e572ff92ce82d1ee79fc67
 
-### Rutas de la APP
+### APP routes
 
--   / -> ItemListContainer -> es el router principal.
--   /category/:categoryId -> ItemListContainer -> es el router de categorias de productos específicos.
--   /item/:paramId -> ItemDetailContainer -> es el router de detalle de producto.
--   /cart -> CartContainer -> es el router de carrito de compras.
--   /checkout -> CheckoutContainer -> es el router de checkout.
--   /dashboard -> DashboardContainer -> es el router de dashboard.
+- / -> ItemListContainer -> is the main router.
+- / category /: categoryId -> ItemListContainer -> is the router for specific product categories.
+- / item /: paramId -> ItemDetailContainer -> is the product detail router.
+- / cart -> CartContainer -> is the shopping cart router.
+- / checkout -> CheckoutContainer -> is the checkout router.
+- / dashboard -> DashboardContainer -> is the dashboard router.
 
-### ¿Qué datos tiene un item al agregarlo al carrito?
+### What data does an item have when adding it to the cart?
 
-Los datos que tienen cuando lo agregas al carrito, es un objeto de {item, count};
+The data they have when you add it to the cart, is an object of {item, count};
 
--   Item -> es el objeto de producto que se agregó al carrito.
--   Count -> es el número de productos que se agregaron al carrito.
+- Item -> is the product object that was added to the cart.
+- Count -> is the number of products that were added to the cart.
 
-### ¿Qué datos tiene cuando generas una orden?
+### What data does it have when you generate an order?
 
-Los datos que tiene una orden son:
+The data that an order has are:
 
--   buyer -> es un objeto con los datos del usuario que realizó la orden.
--   items -> es un objeto de {item, count};
--   total -> el precio total comprado.
+- buyer -> is an object with the data of the user who made the order.
+- items -> is an object of {item, count};
+- total -> the total price purchased.
 
-## ¿Cómo funciona el proyecto?
+## How does the project work?
 
 ### `ItemListContainer`
 
-El ItemListContainer, contiene una lista de todos los productos que se encuentran en producto.
+The ItemListContainer contains a list of all the products found in the product.
 
 ### `ItemDetailContainer`
 
-El ItemDetailContainer, contiene los detalles de un producto específico, que este, es recibido por ID mediante el `useParams` de React Router.
+The ItemDetailContainer contains the details of a specific product, which is received by ID through the `useParams` of React Router.
 
 ### `CartViewContainer`
 
-El cartViewContainer, contiene una lista de todos los productos que se encuentran en el carrito de compras que el usuario eligió.
+The cartViewContainer contains a list of all the products that are in the shopping cart that the user chose.
 
 ### `CheckoutContainer`
 
-El checkoutContainer, contiene un formulario con restricciones para que se registren los datos del usuario y así sumarlo a la base de datos.
+The checkoutContainer contains a form with restrictions to register the user's data and thus add it to the database.
 
 ### `DashboardContainer`
 
-El DashboardContainer, contiene una lista de todos los productos que el usuario compró mediante su email.
+The DashboardContainer contains a list of all the products that the user bought through their email.
 
 ## Autor
 
-Alejo Tomás Clifton Goldney, Técnico Universitario en Programación, 21 años.
+Alejo Tomás Clifton Goldney, University Programming Technician, 21 years old. 
