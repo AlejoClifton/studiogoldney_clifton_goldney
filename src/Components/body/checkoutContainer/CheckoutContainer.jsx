@@ -25,7 +25,6 @@ const CheckoutContainer = () => {
 
     const fillOutForm = (e) => {
         const { name, value } = e.target;
-        console.log(e.target.value);
         setValores({
             ...valores,
             [name]: value,
