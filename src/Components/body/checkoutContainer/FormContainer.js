@@ -125,7 +125,7 @@ const FormContainer = () => {
                     </div>
                 </form>
             ) : (
-                <h1>Procesando Orden</h1>
+                <h1>Redireccionando al dashboard</h1>
             )}
         </div>
     );
